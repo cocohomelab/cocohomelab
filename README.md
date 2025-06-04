@@ -1,5 +1,6 @@
 - 👋 Hi, I’m @cocohomelab
-
+  - Wazuh Security Lab
+  - TryHakcMe Online Lab
 - 🌱 I’m currently learning ...
 
 
