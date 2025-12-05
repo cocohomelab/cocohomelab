@@ -15,4 +15,4 @@ https://tryhackme.com/room/loganalysiswithsiem
 https://tryhackme.com/room/splunkdatamanipulation : Splunk: Data Manipulation
 
 Consideration:
-Request permission (Enterprise Enviroment)
+Request permission to access splunk console (Enterprise Enviroment)
