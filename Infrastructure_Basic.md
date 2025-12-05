@@ -28,7 +28,6 @@ Webserver
 - To Ask/Think:
 > how to test connection?
 
-
 Network
 -
 - Command:
@@ -51,6 +50,11 @@ Network
 
 > How to test Port from firewall? type of port?
 
+VPN
+-
+-
+Virtual IP
+-
 
 ===
 Operating System
