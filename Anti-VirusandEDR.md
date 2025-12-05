@@ -1,0 +1,124 @@
+AV and EDR
+- what is? (plain version) -> ( Detaile version)
+- Architecture, Requirements and Component
+  - Manager
+  - Agent Handler
+  - SuperAgent 
+- Baseline Configuration and Interagtion
+  - Manager
+  - Database
+  - Intergartion
+  - Policy 
+  - Client : Type :- Workstation & Server
+  - Services & Command
+  - Ports
+  - Config File
+
+
+Actions can be taken based on analyis 
+> (Prevention, Mitigation, Containment, Eradication, Remediation, Recovery)
+
+> Fine tune
+
+> Clean up
+
+> Audit (system and user)
+  - Client protection coverrage / persentage
+  - User login and credential
+
+Reference:
+
+https://www.edr-telemetry.com/windows -> EDR Telemetry of Modern EDR Solutions
+
+https://detectionstream.com/
+
+https://thedfirreport.com/
+
+https://www.dfirblog.com/
+
+https://lolbas-project.github.io/#
+
+https://www.loldrivers.io/
+
+https://gtfobins.github.io/ : List of Unix binaries that can be used to bypass local security restrictions in misconfigured systems.
+
+https://attack.mitre.org/
+
+https://caldera.mitre.org/
+
+TryHackMe : Room :
+
+https://tryhackme.com/room/introductiontoedrs
+
+https://tryhackme.com/room/wazuhct
+
+https://tryhackme.com/room/atomicredteam
+
+https://tryhackme.com/room/caldera
+
+https://tryhackme.com/room/baselineanomalies
+
+https://tryhackme.com/room/ipanddomainthreatintel
+
+https://tryhackme.com/room/irplaybooks
+
+### Mapping to Real-World Environment
+
+🔹 Lab Step: Detecting Mimikatz execution
+🔹 Real-World Equivalent:
+
+- EDR would show LSASS access attempts
+
+- SOC would monitor Event ID 10 (object access)
+
+- Defender ATP would raise “Credential Theft” alert
+
+- Analyst triage involves checking if the parent process is suspicious
+
+- Confirm by checking if the machine is domain-joined and high-value
+
+🔹 How SOC responds:
+
+- Isolate endpoint
+
+- Reset credentials
+
+- Check lateral movement
+
+- Review logs for persistence
+
+✅ Real-World Mapping Examples
+
+🛡 THM Malware Analysis → Real World
+
+- Behavior → Detection rules
+
+- Strings → YARA rules
+
+- Network traffic → EDR timeline
+
+- Persistence → IR triage checklist
+
+🪪 THM Windows Logs → Real World
+
+- Event IDs → SIEM correlation rules
+
+- Log patterns → Alert tuning
+
+- Sysmon configs → Detection engineering basics
+
+🔐 THM Privilege Escalation → Real World
+
+- Windows UAC bypass → Admin abuse monitoring
+
+- Service misconfig → GPO hardening
+
+- Token manipulation → EDR behavior analytics
+
+🖥 THM Endpoint Protection Rooms → Real World
+
+- Defender scans → Anti-malware baseline
+
+- EDR behavioral blocks → IOC coverage
+
+- Command-line monitoring → Incident triage
