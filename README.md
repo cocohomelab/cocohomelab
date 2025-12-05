@@ -1,10 +1,10 @@
-- 👋 Hi, I’m @cocohomelab
-  - Wazuh Security Lab
-  - TryHakcMe Online Lab
-- [Certificate of Completion:](Certificate_of_Completion.md)
-- I’m currently learning ...
-  - TryHackMe: Cyber Training
-  - TCM Security: Cybersecurity Training
+ 🛡️ Cybersecurity Portfolio & Learning Journey
+
+A Practical Collection of Hands-On Labs, Notes, and Real-World Security Projects
+
+📌 About This Repository
+
+This repository documents my hands-on cybersecurity experience, self-directed projects, and learning progress across platforms like TryHackMe, Udemy, and my own home cybersecurity lab.
 
 
 <!---
