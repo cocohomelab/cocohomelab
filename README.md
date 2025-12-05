@@ -9,7 +9,7 @@ This portfolio represents my technical foundation and my readiness to apply and 
 
 📌 About This Repository
 
-This repository documents my hands-on cybersecurity experience, self-directed projects, and learning progress across platforms like TryHackMe, Udemy, and my own home cybersecurity lab.
+This repository documents my hands-on experience, self-directed projects, and learning progress across platforms like TryHackMe, Udemy, and my own home lab.
 
 
 <!---
