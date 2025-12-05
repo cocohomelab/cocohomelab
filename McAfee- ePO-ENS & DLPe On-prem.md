@@ -90,7 +90,7 @@ Core Components:
 
 
 
-### Policies + Tasks
+### Policies + Tasks - McAfee Threat Protection ( ENS)
 
 McAfee ePO Policies
 
@@ -205,3 +205,6 @@ Agent + Windows client machines
 - Clean up 300 MB of free disk space on Windows client machines
 - McAfee Profiler to create exceptions for trusted files, applications, or paths to improve performance without creating a security risk
 
+---
+
+### Policies + Tasks - McAfee Data Leakage Protection Endpoint
