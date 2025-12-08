@@ -50,6 +50,9 @@ TryHackMe : Room :
 
 https://tryhackme.com/room/introductiontoedrs
 
+Lesson Learned:
+
+
 https://tryhackme.com/room/wazuhct
 
 https://tryhackme.com/room/atomicredteam
