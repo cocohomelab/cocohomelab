@@ -455,11 +455,22 @@ DON'T USE SPACES
 - If a deleted host has an active sensor, the detections will still come into the console
 - Host management > trash can icon > info for hosts that have been deleted or aged off (Can restore) 
 
+✅ Helpfull Host Reports
+- Dashboard and Reports > all dashboards >
+- Exec Summary and sensor health are good ones
+
+Extra Notes:
+
 ---
 Module 7: Prevention policies
 - Creating and managing prevention policies in CrowdStrike/EDR
 - Understanding policy rules and configurations
 - Best practices for policy management
+<img width="1161" height="366" alt="Module 7 - Prevention policies" src="https://github.com/user-attachments/assets/ee77b356-db76-4730-a964-92cdaee76e45" />
+
+
+
+✅ 
 
 Module 8: Custom IOAs
 - Creating custom Indicators of Attack (IOAs) in CrowdStrike/EDR
