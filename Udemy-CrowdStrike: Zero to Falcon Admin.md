@@ -310,6 +310,41 @@ Module 3: Installation
 - FQDN need to be on allowed list = Documentation Cloud IP addresses
   - need to be alllowed in network for those, see docs for IPs and domains for data between sensors and cloud  
 
+✅ Networking Items
+- Installer makes several attempts to connect to the cloud
+  - If failure, it will uninstall
+- Network Dependencies:
+  - outbound SSL traffic (port 443)
+- Sensors uses certificate pinning
+  - add falcon domain and IPs to bypass any firewall/proxy deep packet inspection = DPI
+  - pinning=what certs are valid, certs get pinned CA public keys to check against
+
+🔹 Specific URLs and IPs will differ based on what cloud instance yu are on (US1, US2, GOV, etc)
+
+🔹 Check Cloud IP Documentation
+
+✅ Windows Installation
+- Requirements:
+  - LM hosts (might be disable)
+  - Network store interface
+  - Windows base filtering engine
+  - Windows power services
+  - WinHTTP auto proxy (if using proxy)
+
+🔹 In order to use the NGAV that comes with CS, Windows Defender must be disable
+* Can't change the installation path
+
+- How to :
+  - GUI or CLI, both need company code (CID)
+  - <installer file name> /install /quite / norestart CID=<string of number>
+  - /quite = no UI prompt
+  - /norestart = ensures the host doesn't reboot after install
+  - sc.exe query csagent
+
+
+
+
+
 
 ---
 Module 4: Troubleshooting
