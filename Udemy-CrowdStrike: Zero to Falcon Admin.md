@@ -50,6 +50,13 @@ Module 9: Exclusions and Quarantines
 - Understanding exclusion and quarantine rules and configurations
 - Best practices for exclusion and quarantine management
 
+What you’ll learn
+- Gain mastery of the Falcon platform: Learn how to navigate and use the various features of the CrowdStrike Falcon platform related to administrative duties.
+- Learn the core principles of endpoint protection, including deployment, host management, troubleshooting, and response.
+- Learn best practices for security operations: Gain an understanding of industry-standard security practices and how to apply them to your organization.
+- Cybersecurity Engineering Concepts for Configuring an EDR Console
+
+
 ### Notes:
 ---
 Module 1: What is CrowdStrike/EDR
@@ -466,16 +473,95 @@ Module 7: Prevention policies
 - Creating and managing prevention policies in CrowdStrike/EDR
 - Understanding policy rules and configurations
 - Best practices for policy management
+
 <img width="1161" height="366" alt="Module 7 - Prevention policies" src="https://github.com/user-attachments/assets/ee77b356-db76-4730-a964-92cdaee76e45" />
 
 
+✅ What makes up Preventions Policies
+- Sensor visibilities
+- NGAV (can slide the detection vs preventions settings from cautions -> extra aggressive)
+- Malware protection
+- Behavior and ML detections
 
-✅ 
+✅ Preventions Policy Precedence
+- Hostmay be assigned to more than one policy
+- If no host assigned to a policy, it will drop to the last precedence policy=default
+- Default=catch all policy
 
-Module 8: Custom IOAs
+~~~
+Make one:
+endpoint security > prevention policy > create new > platform > name > create
+- enable setting > save > confirm > enable > enable policy
+- set the precedence order
+~~~
+
+✅ Default, Phase 1.2.3 Prevention Policies
+- Phase 1 : Intended for customer setting up falcon for the first time
+  - rapid deployment strategy, doesn't fully protect, should be used during initial deployment and alongside AV
+  - should use for minimum time
+- Phase 2 : Intended if you have no AV or EDR solution currently in place
+  - a bit more protective in polocy settings
+  - should use for 30 days
+  - Start introducing IOA
+- Phase 3 : The ideal standard level of protection for your hosts
+  - Should try to get there in 90 days to ensure adequate protection of your endpoints     
+
+Extra Notes:
+
+---
+Module 8: Custom IOAs & IOC Management
 - Creating custom Indicators of Attack (IOAs) in CrowdStrike/EDR
 - Understanding IOA rules and configurations
 - Best practices for custom IOA management
+
+✅ What are IOAs?
+- Indicator of Attack
+- Custom IOCs to implement into CS via gerex pattern matching
+- Actions : Monitor, Detect, Block Executions, Kill Process (depends on what Rule Type you select)
+- Rule Types : Process Creation, FIle Creation, Network Connection, Domain Name
+- Endoint security > Configure > Custom IOA Rule Groups
+
+<img width="1076" height="183" alt="Module 8 - Custom IOAs   IOC Management" src="https://github.com/user-attachments/assets/dd15757b-05bb-40cb-b350-94d601b8c62c" />
+
+✅ Diffrent options based on OS
+- Rule Types : Process Creation, FIle Creation, Network Connection, Domain Name
+
+<img width="852" height="208" alt="Module 8 - Custom IOAs   IOC Management-2" src="https://github.com/user-attachments/assets/51deb131-141c-45bd-94ee-6cf9353bb6a0" />
+
+✅ How they appear in Detections
+- CustomIOA... Will be the prefix in the event name of the detection
+- Can see what rules triggered the detection to fire
+
+✅ Review of Regex and CS Gotchas
+- .* still works for wildcards
+- Need to escape \ just as usual
+- Leave all unused fields as .*
+- Always TEST the rule before implementing. Just because test pattern is correct doesn't mean it's the right regex for the job!
+
+🔹 What we can do with IOAs:
+- Block CIDR ranges of IPs
+- Blocking IPs
+- Blocking Domains
+- File Names
+- File Paths
+- Parent, Grandparent file names
+- Command Line Argument, Parent command lines
+
+✅ IOC Management
+- Keep in mind, these are all sensor based actions
+- Can assign a severity to the detections (color codes can be set in preferences)
+- Can put to a spesific host group, or all hosts
+- Can add tags into IOC being implemented "Bad IP", "Adware", "IT Tool"
+
+<img width="846" height="164" alt="Module 8 - Custom IOAs   IOC Management-3" src="https://github.com/user-attachments/assets/aee35591-32e0-4d1b-924d-21b7629fda56" />
+
+
+✅ Icons!
+
+<img width="1092" height="544" alt="Module 8 - Custom IOAs   IOC Management-4" src="https://github.com/user-attachments/assets/05b78b6f-3857-476a-ac05-739b34c2e6ef" />
+
+
+---
 
 Module 9: Exclusions and Quarantines
 - Managing exclusions and quarantines in CrowdStrike/EDR
