@@ -434,8 +434,26 @@ Make one:
   - OU, platform, usage of wildcarhs
   - Leverage sensor tags where it makes sense 
  
+✅ Tagging Hosts
+- For organizations and filtering on your hosts
+- Sensor grouping tags: added during sensor install:
+~~~
+CLI:
+GROUPING_TAGS="HR,Prod" : at the end of the installation CLI command, after company code (windows)
+falconctl grouping-tags set "tags" : MacOS
+falconctl -s -- tags="tag1,tag2" : linux
+~~~
+DON'T USE SPACES
 
+- Sensor grouping tags, if messed up on Windows install, will need to be fixed in the registery and then reboot and then new update from the sensor will make the chage needed
+  - configured on the sensor themselves, only way to edit is via the registery
+- Falcon grouping tags: in the console, can add more details to them if needed
+- 237 -character limit for the tags, can have 50 tags per host, 1000 tags per CID  
 
+✅ Hosts that don't check in
+- If host hasn't checked in past 45 days, it will age out, sensor is gone with it. Sensor needs to be reinstalled
+- If a deleted host has an active sensor, the detections will still come into the console
+- Host management > trash can icon > info for hosts that have been deleted or aged off (Can restore) 
 
 ---
 Module 7: Prevention policies
