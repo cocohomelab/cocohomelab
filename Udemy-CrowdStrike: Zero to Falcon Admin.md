@@ -259,7 +259,6 @@ Extra Notes :
 - This is where you can assign the roles that you're going to give that new user.
 - Now, after you create the user, there's a couple of actions you can do.
 - If you go back into the user management, let's say that we now have the user, Haley at Blue Team Consulting. Dot com.
-
 - Well, if we click on the ellipsis, it'll bring up the details and we can do all of the following actions in there.
 - You can reset the users MFA or to two factor authentication.
 - You can choose the option to reset a password, you can delete the user, etc. So creating a user that's the create user button.
@@ -291,6 +290,28 @@ Module 3: Installation
 - Installing CrowdStrike/EDR on endpoints
 - Post-installation configurations and best practices
 
+✅ Manual vs Automatic Installs
+- Should be able to complete sensor roll out to all hosts within 45 days
+  - Do not shutdown or reboot the host while the sensor is installing
+1. Manual Install
+  - Small number to deploy
+    - Hosts setup and management > sensor download > installer based on OS > download > copy CID
+    - Doubleclick the pkg file > CID > go through installation
+    - Verify sensor is running: sc.exe query csagent
+2. Automatic install
+  - SCCM or automated push
+  - Host setup > sensor downloads > sensor installer based on OS > download > copy ID
+  - Run on CLI via your deployment tool
+    - <installler file name> /install /quite /norestart CID=<CID> 
+
+✅ Points of Note
+- Make sure you have the correct installer for version OS
+  - Sensor Release Matrix in knowledge based article (n-1. n-2) 
+- FQDN need to be on allowed list = Documentation Cloud IP addresses
+  - need to be alllowed in network for those, see docs for IPs and domains for data between sensors and cloud  
+
+
+---
 Module 4: Troubleshooting
 - Troubleshooting common issues with CrowdStrike/EDR
 - Best practices for effective troubleshooting
