@@ -570,21 +570,37 @@ Module 9: Exclusions and Quarantines
 
 ✅ What is an Exclusion?
 - How to tune your console
-- These are whitelisted, trusted processes, that tou want to exclude from detections (preventions)
+- These are whitelisted, trusted processes, that you want to exclude from detections (preventions)
 - Could be another AV or EDR solution to add exclusions for
-- 3 Types :
-  - Machine Learning = manual or via detection page to create (GLOB syntax)
+- 4 Types :
+  - Machine learning (file path) exclusion = manual or via detection page to create (GLOB syntax)
     - File paths
-  - IOAs = configured via the detection page only (regex)
+  - Machine learning (certificate) exclusion
+  - Indicator of attack (IOA) exclusion = configured via the detection page only (regex)
     - behavioral exclusions that come up for False Positive Crowdstrike detections
-  - Sensor Visibility = completely ignored by the falcon sensor. Use with caution, or don't use at all
+  - Sensor visibility exclusion = completely ignored by the falcon sensor. Use with caution, or don't use at all
     - last resort option
     - sensor wont reallt log events, either
   - Exclusions will apply to ALL hosts or to specific Hosts Groups ypu select    
 
+✅ GLOB Patterns
+- Uses matches found in detections to create the exclusion
+- Assumes drive letters, so you don't need to add them
+- Limit of 1 pattern per exclusion
+- \*\ For one folder
+- \** For recursive
 
+🔹 How to add a ML Exclusion :
+- In filter bar : triggering file: \<filename> and then group by hash, group by command line, etc and then copy it
+- Go to endpoint > exclusion > ML exclusion > all hosts > next > paste in command line in exclusion pattern, click detection and preventions check box > create
+  - ** always test the pattern
+- Example for Malwarebytes : *\Program Data\Malwarebytes* *Program Files\Malwarebytes*
 
-
+✅ Quarantined Files
+- Need to enable it in the prevention policy
+- Not available on the Linux platform, but should be soon
+- Locally stored malware files will be stored on the host for 30 days, then deleted
+  - Windows: \Windows\System32\drivers\CrowdStrike\Quarantine
 
 
 
