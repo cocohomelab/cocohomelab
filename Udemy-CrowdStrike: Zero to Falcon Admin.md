@@ -567,3 +567,69 @@ Module 9: Exclusions and Quarantines
 - Managing exclusions and quarantines in CrowdStrike/EDR
 - Understanding exclusion and quarantine rules and configurations
 - Best practices for exclusion and quarantine management
+
+✅ What is an Exclusion?
+- How to tune your console
+- These are whitelisted, trusted processes, that tou want to exclude from detections (preventions)
+- Could be another AV or EDR solution to add exclusions for
+- 3 Types :
+  - Machine Learning = manual or via detection page to create (GLOB syntax)
+    - File paths
+  - IOAs = configured via the detection page only (regex)
+    - behavioral exclusions that come up for False Positive Crowdstrike detections
+  - Sensor Visibility = completely ignored by the falcon sensor. Use with caution, or don't use at all
+    - last resort option
+    - sensor wont reallt log events, either
+  - Exclusions will apply to ALL hosts or to specific Hosts Groups ypu select    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
