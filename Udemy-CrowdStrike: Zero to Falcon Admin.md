@@ -49,9 +49,9 @@ Module 9: Exclusions and Quarantines
 - Managing exclusions and quarantines in CrowdStrike/EDR
 - Understanding exclusion and quarantine rules and configurations
 - Best practices for exclusion and quarantine management
----
-Notes:
 
+### Notes:
+---
 Module 1: What is CrowdStrike/EDR
 - Introduction to CrowdStrike/EDR
 - Understanding Endpoint Detection and Response (EDR)
@@ -134,13 +134,14 @@ Extra Notes:
 - They have a sandbox.
 - Environment to run sample malware within there, and just a really great tool overall.
 - Definitely one that falls under XDR and more consoles than more features within the console that I could probably ever list out.
-
+---
 Module 2: Users and Roles
 - User and role management in CrowdStrike/EDR
 - Understanding permissions and access levels
 - Best practices for user and role management
 
 🛡 Roles
+- Permission 
 - Users are assigned by the Falcon admin
 - Must have an associated domain email/CID association
 - CID needs to be associated with your companies email domain, if not=CS customer support
@@ -156,6 +157,122 @@ Module 2: Users and Roles
 
 🔹 Role Access in cumulative to combine roles for capabilities
 
+Extra Notes:
+
+- We're talking about permissions roles capabilities for our users.
+- So when we think about roles in I.T.
+- Cybersecurity, we think of permissions.
+- In CrowdStrike.
+- They bundle up all of their permissions.
+- So if you can do X, Y, or Z into.
+- A rule, then you assign multiple roles to Your users.
+- That is how you manage permissions within CrowdStrike.
+- There's, I don't know, maybe 25 roles or so within the console.
+- And these are going to be assigned and administered controlled provisioned new users by the Falcon admin.
+- That's going to be you.
+- So you don't want to over.
+- Provision a new user with giving them too many roles that are outside of their assigned job duties or the functions that they need to take within the console.
+- Because we want to think of a security mindset when we go through administrating the CrowdStrike console and state that we don't want to have a user be overprivileged with an environment because if a threat actor A to ever comes in to the environment and they have compromised a user that is overprivileged, this is the terrible attempt at a crown.
+- I'm drawing on a user for someone having the King account or a God like account, because you've given them all 25 roles available within the console.
+- Now that threat actor is going to have godlike privileges within your CrowdStrike or your console,and you can assume how that will be absolutely devastating.
+- So we don't want to do that.
+- And when you're administrating new users, just keep in mind what role would be applicable to give them based on their job function and then leave it at that.
+- We're going to go over roles in the demonstration.
+- One important note that we will get to as well is.
+- The consideration around the real time response.
+- We're going to call that RTR From now on, this is pretty much where you drop into a live show onto an end point.
+- These there's only three of them.
+- And even if you are a Falcon administrator, you are not given any capabilities to remote into a host via RTR.
+- Off the bat, you need to be assigned one of the three rtr RTR roles to your account in order to be able to drop in.
+- So just keep that in mind.
+- It's a very important thing to note going down the list here.
+- Since this is in blue, it must be important.
+- So we have an associated domain email with your account that has to match the customer ID association with your console.
+- So what does this mean?
+- If my console that we'll see in the demonstration.
+- My email domain for my business is blue team wins dot com.
+- So my username is H Shaw at blue team wins dot com.
+- That means I cannot add my gmail, my Yahoo or any other email domain that is not matching the business email domain that I registered when I became a crowdstrike client to the console.
+- The email domain is going to be associated to your customer ID and you cannot add any other emails into your CrowdStrike console unless the email domain matches, you can open up a support ticket and ask for a one off with the team over at CrowdStrike to say, Hey, can you just add this Gmail account in?
+- I wish you the best of luck.
+- I think they will deny that based off of their security standards that they set and they really don't allow just generic emails to be added to the console.
+- It needs to be a business email.
+- So just wanted to make you aware of that.
+- Some of the top roles we have here, Falcon Admin, as we mentioned, doesn't come with RTR off the bat and it also doesn't come with the custom IOA.
+- IOA is indicator of attack.
+- Those are going to be your custom detections that you can write.
+- So if you want to perform any of those actions eaos or being able to drop into a shell onto a host, you need to assign the roles to yourself as a falcon admin or where it makes sense to the user who's going to be performing these functions as part of their job duty.
+- We have a prevention policy Admin Falcon Console Guest, a Dashboard Admin Desktop Support
+- Analyst Workflow
+- Author help Desk analysts.
+- There is again just so many roles within the console.
+- We're going to show how to get a quick overview of what that role does before you sign it to a user when we see it in the console.
+- So you don't have to memorize any of these, they're all available and well documented within the CrowdStrike documents.
+- But the big things to keep in mind is really the Falcon administrator will provision users with the roles your business email domain can only be added to your console, and the Falcon admin role does not come preconfigured with custom EOA or RTR capabilities.
+- Okay, let's dive in a little bit deeper on the RTR roles.
+- As I mentioned, there are only three read, only analyst, active responder and administrator.
+- So the read only analyst you basically got read only.
+- Sorry, but nobody trusts you with any capabilities at all within the console and your read only.
+- But I guess the flip side of that is you can't really do any damage because you got read only.
+- So you can you can't do any custom scripts, you can't do any put actions.
+- You pretty much can just look at files, look at logs, look at alerts, but you can't close any of the alerts.
+- You can't triage or make comments.
+- You can just look and observe.
+- So you get the smiley face as you are probably green stick in the environment.
+- But over time, hopefully you get promoted to at least the active responder where you can start using the get command and some custom scripts.
+- So this doesn't say custom scripts, it says some custom scripts.
+- So the responder is a little bit better then reader as you can do some additional commands.
+- When you're on a shell for a host and you can run some custom scripts.
+- But if you want to be able to run any custom script, you're going to need to be the RTR administrator.
+- The admin can run all the commands within their.
+- Think there's about 15 preconfigured commands that you can run on the shell, but you really don't need to know this number because you can create any custom script leveraging PowerShell and add that script to the console and then run that script on the endpoint.
+- And there is no limit to what PowerShell command you can put into a script.
+- All are fair game.
+- So really no limitation for any kind of action you can take in RTR, at least not one that, I've come across yet.
+- And the ability to upload files, download files, run commands, admin is going to be able to do anything and not run into any permission issues at all.
+- Let's say you had a new user who you want to be able to view files on a host but not be able to pull any off.
+- Which role would that fall under?
+- That would be the read only analyst.
+- So let's keep the RTR roles in mind.
+- Again, if you're a Falcon admin as your role and you notice you can't connect to a remote host, that is because you do not have one of these three roles assigned to you.
+- OC How to add a New user.
+- Our favorite thing to do is provision users and add people to the console.
+- Because we are administrators, we're going to go to host setup Falcon users and user management.
+- Here you're going to be able to click the three dot ellipses on the side or the create user.
+- Button that will be there and it will walk you through all the steps to fill out their first name, last name, their email.
+- And of course, as we mentioned, that email needs to be associated to the business domain email that's registered with the side of the console, the customer ID.
+- Keep that in mind.And.
+- The rolls.
+- This is where you can assign the roles that you're going to give that new user.
+- Now, after you create the user, there's a couple of actions you can do.
+- If you go back into the user management, let's say that we now have the user, Haley at Blue Team Consulting. Dot com.
+
+- Well, if we click on the ellipsis, it'll bring up the details and we can do all of the following actions in there.
+- You can reset the users MFA or to two factor authentication.
+- You can choose the option to reset a password, you can delete the user, etc. So creating a user that's the create user button.
+- And then once the user is created, the ellipses are three dots, whatever this is called.
+- That is where you can pull up all the details and take additional actions on the user.
+- Now, the only thing you can really change after the user is created is their first name and their last name. That's it.
+- Once the email is registered, it's kind of locked in.
+- You can change their roles to you can add or remove some roles as the as an admin, depending on your permissions, but you're not going to really be able to change the email address.
+- What you would do is delete the user and then re add them with a new email invitation.
+- Setting up email notifications emails.
+- Good rule filtering is always good to go with outlook because otherwise we get overwhelmed and we all love emails.
+- Anyways, you're going to go to support and resources general settings and then scroll all the way to the bottom.
+- And you can also set up email notifications through endpoint security crowd score incidents and then click on an incident and be able to set up email notifications there.
+- But Hayley, what if you go to the incidents page and you don't see the option to set up email notifications?
+- Well, what roles are assigned to you?
+- You're going to ask yourself that a lot when you're in the console for if you can do something or if you can't do something, ask yourself what roles you're assigned to and maybe you're not supposed to be able to see it or perform that function.
+- Also, what is an incident?
+- An incident is made up of multiple detections.
+- When CrowdStrike feels that a certain sequence of events in a timeline.
+- Triggers enough detections for it to be overly concerned or really say this qualifies to be promoted from four separate detections to one incident.
+- It will combine all of the detections and put them into your incidence page.
+- The incidence page is going to be different than your detections page, but you can also view your incidence within your detections page.
+- So if I didn't confuse you enough with what I just said, we'll be sure to cover that and the demonstration.
+- But just be aware that there is a separate section in the console to view all of your incidents, and it's definitely a bit more granular with the descriptions of what's going on.
+- As CrowdStrike felt, those series of detections were a bit more serious and they kind of give you a nice write up in description and additional details about the events that happened.
+---
 Module 3: Installation
 - CrowdStrike/EDR installation prerequisites
 - Installing CrowdStrike/EDR on endpoints
