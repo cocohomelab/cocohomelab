@@ -157,8 +157,21 @@ Module 2: Users and Roles
 
 🔹 Role Access in cumulative to combine roles for capabilities
 
-Extra Notes:
+✅ A note on Real Time Responder (RTR) Roles
+- RTR - Read only analyst - can't do custom scripts ot"PUT" actions
+- RTR - Active Responder - can use the "GET" command, some custom scripts
+- RTR - Administrator - custom scripts, upload files, run commands 
 
+✅ How to add a new user
+- Host setup > falcon users > user management
+- Can reset 2FA, passwords, delete users, create users
+
+✅ Setting up Email notifications
+- Support and resources > general settings > scroll to the bottom
+- Endpoint security > crowstrike incidents
+  - Can set up email notifications 
+
+Extra Notes :
 - We're talking about permissions roles capabilities for our users.
 - So when we think about roles in I.T.
 - Cybersecurity, we think of permissions.
