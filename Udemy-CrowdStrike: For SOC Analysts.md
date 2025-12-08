@@ -1,4 +1,4 @@
-### CrowdStrike: For SOC Analysts
+## CrowdStrike: For SOC Analysts
 Hailie Shaw, Blue Team Consulting
 
 Module 1: Console Overview Get acquainted with the CrowdStrike console, your command center for proactive threat detection and incident response. Explore its interface, functionalities, and navigation to ensure a solid foundation for the rest of the course.
