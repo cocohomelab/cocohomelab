@@ -353,7 +353,7 @@ Module 3: Installation
 
 ✅ MacOS Installation (revisit to jotdown notes)
 
-✅ Installation Tokens
+✅ Installation Tokens (Registration Token)
 - Host setup > installation tokens
   - 1 year, 90 days, 30 days, does not expire
   - can aligh best to your org, maybe 30 days is best
@@ -370,16 +370,74 @@ Module 4: Troubleshooting
 - Troubleshooting common issues with CrowdStrike/EDR
 - Best practices for effective troubleshooting
 
+✅ The Checklist
+- Is the OS supported by CS?
+- System requirement met for what services need to be running?
+- KEX approved for Macs?
+- Did you verify that the sensors is running?
+- Network requirement met for the correct enable/allowed lists at the Firewalls?
+- `netstat.exe -f` with admin creds to see if the falcon domain name or falcon cloud IPs is showwing an established connection
+- If can connect to the cloud: can host get on the internet? Are you using a proxy and are those settings correct? Firewall/Network settings correct? Check that the host trust the CS CA?
+- Are there other products interfering with the falcon sensor? (Avast, McAfee, etc)
+- Is the timeout issue? Agent install will timeout after 20min. Can override with the `ProvNoWait` parameter in the command line: \<installer file name> /install /quite /norestart CID=\<Customer ID> ProvNoWait=1
+- What do the logs say? Any error codes present? (%LOCALAPPDATA%\temp\ for anything matching crowdstrike around time of installation)
+
+✅ RFM (Reduced Functionality Mode)
+- The sensor enters safe mode, limited logging if any based on the OS affected
+- Unsuppoeted Kernel updates
+- Use the sensor dashboards available to check what sensors have entered RFM
+
+🔹 Options to address:
+- Rollback the system updates or downgrade to an older version of that system
+- Bear and grit it until falcon release a sensor update for that Kernel
+
+Extra Notes:
+
+---
 Module 5: Uninstalling & Sensor updates
 - Uninstalling CrowdStrike/EDR from endpoints
 - Updating CrowdStrike/EDR sensors
 - Best practices for sensor management
 
+✅ Steps for Uninstall 
+
+
+
+
+---
 Module 6: Host management
 - Managing hosts using CrowdStrike/EDR
 - Understanding host groups and policies
 - Best practices for host management
 
+✅ Host Groups
+- Dynamic
+  - Use whenever possible and can be automated
+  - AD and dynamic is a good way to manage hosts, OU grouping
+- Static
+  - Defined manually via host IDs/Agent IDs list or by selecting them in the console
+  - Good for testing of systems that you test every time
+  - Can cause duplications
+  - Only if you have a relly good nomenclature for all your hosts... not likely
+  - AIDs can get pretty long to manage them by that random strings of names
+  - Can assign up to 1k hosts to a static group at a time
+
+```
+Make one:
+- Host setup > host groups > add new group > name and fill out > add group > edit > set filter
+  - Filters only come from the sensors that are installed and sebd the data back to console
+- A host can be in multiple groups with each group targetting diffrent policies
+```
+- Roll out your groups slowly, with small subsets of hosts to use as a samples
+- By default, all your Assigned Policyes to your hosts groups are BLANK. You add the policies as you go configure the host groups (firewall, response, ML, IOAs, preventions, update policies)
+- Be wise in what you use to set your host groups matching policy:
+  - OU, platform, usage of wildcarhs
+  - Leverage sensor tags where it makes sense 
+ 
+
+
+
+---
 Module 7: Prevention policies
 - Creating and managing prevention policies in CrowdStrike/EDR
 - Understanding policy rules and configurations
