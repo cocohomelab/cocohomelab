@@ -302,7 +302,7 @@ Module 3: Installation
   - SCCM or automated push
   - Host setup > sensor downloads > sensor installer based on OS > download > copy ID
   - Run on CLI via your deployment tool
-    - <installler file name> /install /quite /norestart CID=`<Customer ID>`
+    - \<installler file name> /install /quite /norestart CID=\<Customer ID>
 
 ✅ Points of Note
 - Make sure you have the correct installer for version OS
@@ -336,15 +336,10 @@ Module 3: Installation
 
 - How to :
   - GUI or CLI, both need company code (CID)
-  - `<installer file name>` /install /quite / norestart CID=`<Customer ID>`
+  - \<installer file name> /install /quiet /norestart CID=\<Customer ID>
   - /quite = no UI prompt
   - /norestart = ensures the host doesn't reboot after install
   - sc.exe query csagent
-
-
-
-
-
 
 ---
 Module 4: Troubleshooting
