@@ -341,6 +341,30 @@ Module 3: Installation
   - /norestart = ensures the host doesn't reboot after install
   - sc.exe query csagent
 
+✅ Linux Installation
+- CLI Install option, no GUI available. *make sure you check what OSs are supported "uname -a" to get kernel version (to make sure the version is supported)
+  - Ubuntu : sudo dpkg -i \<installer file name>
+  - RHEL, CentOS, Amazon Linux : sudo dnf install \<installer file name>
+  - SLES : sudo zypper install \<installer file name>
+- Register it with: sudo /opt/crowdstrike/falconctl -s --cid=\<CID>
+- Configure CrowdStrike : sudo /opt/crowdstrike/falconctl configure
+- To start the CrowdStrike service : sudo systemctl start crowdstrike
+- To check the falcon service is running : ps -e | grep falcon-sensor
+
+✅ MacOS Installation (revisit to jotdown notes)
+
+✅ Installation Tokens
+- Host setup > installation tokens
+  - 1 year, 90 days, 30 days, does not expire
+  - can aligh best to your org, maybe 30 days is best
+  - can stagger all 50 that are available to you
+- Prevent unauthorized installations
+- Opt-in : it off by default
+- Set expiration to rotate tokens
+- 50 tokens per CID
+- Create in falcon console or through API
+- Keep them secret, for preventing anyone from installing the sensors
+- Audit log will show who has tokens on the console 
 ---
 Module 4: Troubleshooting
 - Troubleshooting common issues with CrowdStrike/EDR
