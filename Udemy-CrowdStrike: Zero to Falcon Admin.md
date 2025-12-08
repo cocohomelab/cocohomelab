@@ -59,6 +59,18 @@ Module 1: What is CrowdStrike/EDR
 
 🛡 What is an EDR tool?
 - Endpoint detection And response.
+- Focuses on detecting and responding to security threats on ednpoints
+- Uses a combination of signature-based and behavioral-based detection techniques
+- Cab leverage machine learning and artificial intelligence to improve accurancy and efficiency
+- Provides real-time monitoring and detection of potential threats
+- Can initiate autoomated resosnses to detect threats
+- Provides detailed logs and forensic data for further investigation and prevention 
+🛡 What makes Crowstrike Stand Out?
+- Advanced capabilities
+- Flexible deploment options
+- User-friendly interface
+- Strong customer support
+- Lots of additional features within the console
 
 Extra Notes:
 - This is something that's pretty much it's going to be an agent.
@@ -122,13 +134,27 @@ Extra Notes:
 - They have a sandbox.
 - Environment to run sample malware within there, and just a really great tool overall.
 - Definitely one that falls under XDR and more consoles than more features within the console that I could probably ever list out.
-- But I'm also not a sales engineer for CrowdStrike, but I definitely love the tool, and it's definitely something that stands out.
-
 
 Module 2: Users and Roles
 - User and role management in CrowdStrike/EDR
 - Understanding permissions and access levels
 - Best practices for user and role management
+
+🛡 Roles
+- Users are assigned by the Falcon admin
+- Must have an associated domain email/CID association
+- CID needs to be associated with your companies email domain, if not=CS customer support
+
+✅ Top Roles:
+- Falcon Admin - doesn't come with manage custom IOA or connect to host (RTR and custom IOAs manager)
+- Preventions Policy Admin
+- Falcon console guest
+- Dashboard Admin
+- Desktop Support Analyst
+- Workflow Author
+- Help Desk Analyst
+
+🔹 Role Access in cumulative to combine roles for capabilities
 
 Module 3: Installation
 - CrowdStrike/EDR installation prerequisites
