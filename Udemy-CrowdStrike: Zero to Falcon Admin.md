@@ -581,7 +581,9 @@ Module 9: Exclusions and Quarantines
   - Sensor visibility exclusion = completely ignored by the falcon sensor. Use with caution, or don't use at all
     - last resort option
     - sensor wont reallt log events, either
-  - Exclusions will apply to ALL hosts or to specific Hosts Groups ypu select    
+  - Exclusions will apply to ALL hosts or to specific Hosts Groups your select    
+
+Ref: https://www.sonicwall.com/support/knowledge-base/crowdstrike-cs-exclusions/kA1VN0000000ITB0A2
 
 ✅ GLOB Patterns
 - Uses matches found in detections to create the exclusion
@@ -601,8 +603,13 @@ Module 9: Exclusions and Quarantines
 - Not available on the Linux platform, but should be soon
 - Locally stored malware files will be stored on the host for 30 days, then deleted
   - Windows: \Windows\System32\drivers\CrowdStrike\Quarantine
+  - MacOS : /Library/Application Support/CrowdStrike/Falcon/Quarantine
 
-
+- When Downloading/Uploading a Quarantine File:
+  - Password is infected, for a stop and pause moment to take note
+  - 32mb is max suze to upload to the cloud-windows amd mac only
+  - Local qurantine on a host=30 days
+  - Cloud storage=90 days (90 days together max, not 120 days)
 
 
 
