@@ -1,8 +1,7 @@
-CrowdStrike: Zero to Falcon Admin
+## CrowdStrike: Zero to Falcon Admin
+Hailie Shaw, Blue Team Consulting
 
-Description
-
-Master the Falcon Platform from an Administrative Perspective
+### Master the Falcon Platform from an Administrative Perspective
 
 This course is designed to provide learners with an in-depth understanding of CrowdStrike/EDR, a powerful endpoint security tool. Participants will learn how to install and configure CrowdStrike/EDR, manage hosts, create and manage prevention policies, customize IOAs, manage exclusions and quarantines, and troubleshoot issues.
 
