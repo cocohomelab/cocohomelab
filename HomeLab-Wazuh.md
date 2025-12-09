@@ -8,7 +8,39 @@ Key To understand:
 - Concept
 - Intergration
 
+
+
+
+
+
+⭐ Summary Mapping (Simple Version)
+
+Wazuh matches commercial EDRs in:
+- FIM
+- Logging
+- IOC detection
+- Compliance
+- Vulnerability scanning
+- Process monitoring
+- Basic response actions
+
+Commercial EDRs exceed Wazuh in:
+- Behavioral detections
+- Advanced analytics / ML
+- Real-time threat blocking
+- Endpoint isolation
+- Enterprise-scale automation
+- Deep kernel visibility
+
+
+
+
+
+
+
 Reference:
 
 https://tryhackme.com/room/wazuhct
+
+https://docs.trellix.com/bundle/mvision-endpoint-detection-and-response-product-guide/page/UUID-539597b6-3a64-e122-8981-097a24897557.html
   
