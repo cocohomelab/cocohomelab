@@ -33,14 +33,25 @@ Commercial EDRs exceed Wazuh in:
 - Deep kernel visibility
 
 
-
-
-
-
-
 Reference:
 
 https://tryhackme.com/room/wazuhct
 
 https://docs.trellix.com/bundle/mvision-endpoint-detection-and-response-product-guide/page/UUID-539597b6-3a64-e122-8981-097a24897557.html
   
+✅ How to make your GitHub notes count as a real portfolio:
+
+Do these and it becomes a strong portfolio:
+- Organize your repo clearly
+  - e.g., /CrowdStrike, /Trellix, /Wazuh, /EDR, /SIEM
+- Add real hands-on examples
+  - Screenshots
+  - Lab steps
+  - Detection queries
+  - Configuration snippets
+  - Troubleshooting notes
+- Include a README
+  - Explain what the repo is and what you learned.
+- Show your thinking
+  - Add summaries, diagrams, comparisons (e.g., “Wazuh vs CrowdStrike”).
+  - Interviewers love when you show analysis, not just notes.
