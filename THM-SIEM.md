@@ -1,9 +1,19 @@
 What is SIEM?
-
 Concept:
+- Centralized Log Collection
+- Normalization of Logs
+- Correlation of Logs
+
+Log Sources
+- Windows Machine : Event Viewer 
+- Linux Machine
+- Web Server
+
+Log Ingestion
 
 
-
+Log Analysis with SIEM
+- 
 Lesson Learn:
 
 TryHackMe : Room :
