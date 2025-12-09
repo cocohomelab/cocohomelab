@@ -4,7 +4,10 @@ Linux Basic
 
 
 
-Log:
+✅ Log:
+
+
+Key 
 
 Troubleshooting:
 
@@ -12,3 +15,27 @@ Troubleshooting:
 - Check user
 
 ✅ File and Folder Permission
+
+✅ Services
+- systemctl status \<service>
+- systemctl config
+- systemd-analyze
+- systemd-analyze blame
+- systemd-analyze critical-chain
+- systemctl list-dependencies \<service>
+- systemd-analyze verify \<service>.service
+- systemctl cat \<service>
+
+✅ Process
+- ps -elf | grep
+✅ Search and Execute
+
+✅ 
+
+✅ 
+
+
+
+
+
+
