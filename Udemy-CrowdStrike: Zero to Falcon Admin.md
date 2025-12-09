@@ -291,6 +291,7 @@ Extra Notes :
 - But just be aware that there is a separate section in the console to view all of your incidents, and it's definitely a bit more granular with the descriptions of what's going on.
 - As CrowdStrike felt, those series of detections were a bit more serious and they kind of give you a nice write up in description and additional details about the events that happened.
 ---
+
 Module 3: Installation
 - CrowdStrike/EDR installation prerequisites
 - Installing CrowdStrike/EDR on endpoints
@@ -370,7 +371,101 @@ Module 3: Installation
 - 50 tokens per CID
 - Create in falcon console or through API
 - Keep them secret, for preventing anyone from installing the sensors
-- Audit log will show who has tokens on the console 
+- Audit log will show who has tokens on the console
+
+Key Takeaways : 
+
+**1. Installation Types**
+
+**Manual Install**
+
+* Best for **small numbers of hosts** (one-off installs).
+* Navigate to **Host Setup & Management → Sensor Downloads** to get the installer.
+* **Copy your Customer ID (CID)** — required to register the sensor.
+* Run the installer manually; enter CID during the wizard.
+* Verify sensor is running:
+  **`sc query csagent`** (Windows).
+
+**Automatic / Mass Deployment**
+
+* For **large-scale rollout** (hundreds to thousands of hosts).
+* Use **SCCM, Intune, JAMF, scripts, or other deployment tools**.
+* Install silently using something like:
+  `WindowsSensor.exe /install /quiet /norestart CID=<CID>`
+* **Do NOT reboot during installation**; it can cause the sensor to fail.
+* Goal: complete rollout **within 45 days**, but follow your environment’s limits.
+
+**2. Best Practices for Deployment**
+
+* **Deploy in stages** (pilot/test groups → production).
+  Never deploy to full prod immediately.
+* Ensure **exclusions/whitelists** are configured if another AV is still present.
+* Ensure **correct OS installer** is used and that the OS version is supported.
+* Follow **CrowdStrike’s Sensor Release Matrix**; use current or N-1 versions.
+* Configure firewall/proxy rules **before installing**.
+
+**3. Network Requirements**
+
+* Sensor attempts to connect to the cloud for ~20 minutes; if it can’t, it **uninstalls itself**.
+* Allow outbound **HTTPS (443)** to CrowdStrike cloud.
+* Whitelist **CrowdStrike FQDNs, IPs, and certificates** (varies by US-1, US-2, GovCloud, etc.).
+* CrowdStrike uses **certificate pinning** — proxies/firewalls doing **DPI** may break installation unless bypassed.
+
+**4. Windows Requirements**
+
+* Required Windows services:
+
+  * **Network Store Interface (NSI)**
+  * **Windows Filtering Platform (WFP)**
+  * **HTTP Auto Proxy** (if using proxy)
+  * **Power Services**
+* For Falcon **Next-Gen AV**, **Windows Defender must be disabled**.
+* Installation path **cannot be changed**.
+* Verify service status:
+  **`sc query csagent`**.
+
+**5. Linux Install**
+
+* No GUI install; **CLI only**.
+* Check kernel compatibility using:
+  **`uname -r`**
+* Two-step process:
+
+  1. **Install** package (apt, yum, zypper, etc.).
+  2. **Register** the sensor:
+     `falconctl -s --cid=<CID>`
+* Start service and verify via:
+  **`ps -ef | grep falcon-sensor`**.
+
+**6. macOS Install**
+
+* Requires **elevated privileges**.
+* Deploy via **JAMF** or CLI.
+* Two-step process: install → register with CID.
+* macOS requires manual or MDM-based approval of:
+
+  * **System Extensions / Kernel Extensions**
+  * **Full Disk Access**
+* Use **falconctl** to register and verify operation.
+
+**7. Installation Tokens**
+
+* Located under **Host Setup → Installation Tokens**.
+* Off by default — **enable manually**.
+* Purpose: prevent unauthorized install/uninstall (anti-tamper).
+* Token lifetimes: **30 days, 90 days, 1 year, or no expiration**.
+
+  * Best practice: **30 days** for security.
+* Limit: **50 tokens per CID**.
+* Can be created via UI or **API** (copy the API secret key immediately).
+* Token usage in CLI:
+  `--provisioning-token <TOKEN>`
+* Audit logs show who created/deleted tokens or keys.
+
+**Summary**
+
+This module emphasizes correct installer selection, CID handling, firewall preparation, staged rollout, OS-specific requirements, and the use of installation tokens for security. The most critical points: **don’t reboot during install, whitelist network paths first, deploy in controlled phases, and verify the sensor is running**.
+
 ---
 Module 4: Troubleshooting
 - Troubleshooting common issues with CrowdStrike/EDR
