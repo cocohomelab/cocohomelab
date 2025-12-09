@@ -7,7 +7,8 @@ Linux Basic
 ✅ Log:
 
 
-Key 
+⭐Keywords:
+- Errr, Fail
 
 Troubleshooting:
 
@@ -28,6 +29,7 @@ Troubleshooting:
 
 ✅ Process
 - ps -elf | grep
+- lsof
 ✅ Search and Execute
 
 ✅ 
