@@ -492,7 +492,170 @@ Module 4: Troubleshooting
 - Rollback the system updates or downgrade to an older version of that system
 - Bear and grit it until falcon release a sensor update for that Kernel
 
-Extra Notes:
+Key Takeaways:
+
+This module provides a **step-by-step troubleshooting methodology** that solves **~99% of sensor issues**.
+It moves from **simple → complex**, ensuring you don’t jump straight into logs before checking basics.
+
+**1. Start With the Basics**
+
+✔ **1. OS Supported?**
+
+* Verify the target OS is **officially supported** by CrowdStrike.
+* Unsupported OS = failed install.
+
+✔ **2. System Requirements Met?**
+
+* Check required **system services and components** for the OS.
+
+  * Examples:
+
+    * Windows: NSI, WFP, HTTP Auto Proxy, etc.
+    * macOS: System/Kernel Extension approvals.
+    * Linux: Supported kernel version.
+
+✔ **3. Is the Sensor Running?**
+
+* Windows:
+  **`sc query csagent`**
+* Linux:
+  **`ps -ef | grep falcon-sensor`**
+* macOS:
+  **`falconctl stats`**
+
+If it’s not running → fix before going further.
+
+**2. Network Troubleshooting (Most Common Problem Area)**
+
+✔ **4. Firewall & Network Rules Correct?**
+
+* Ensure **all CrowdStrike FQDNs, IPs, URLs**, and **port 443** are allowed.
+* Must be done **before installation**.
+
+✔ **5. Can the Endpoint Reach the Cloud?**
+
+* **Ping** CrowdStrike cloud URLs/IPs.
+* If ping works → check connectivity:
+
+  * **`netstat -f`** (Windows) to confirm **established connections**.
+
+✔ **6. Does the Host Have Basic Internet Access?**
+
+* If internet is broken → everything else fails.
+
+✔ **7. Proxy Settings Correct?**
+
+* If using a proxy:
+
+  * Ensure proper configuration according to documentation.
+  * Check for **DPI (deep packet inspection)**—can break certificate pinning.
+
+✔ **8. Certificate Trust**
+
+* Host must trust the **CrowdStrike Certificate Authority** (e.g., GoDaddy).
+  Missing CA = connection failure.
+
+**3. Installer & Command Line Validations**
+
+✔ **9. Correct Installer Package?**
+
+* Wrong OS version, architecture (ARM vs x86), or wrong sensor version can break install.
+
+✔ **10. Correct CID (Customer ID)?**
+
+* A wrong CID registers the host to **someone else’s tenant**.
+
+✔ **11. Correct Command Line Syntax?**
+
+* Validate silent install parameters, tokens, and flags.
+
+**4. Timeout Issues**
+
+✔ **12. Did the Sensor Fail After 20-Min Timeout?**
+
+* Sensor tries ~20 minutes to reach the cloud; if it can’t, it **uninstalls itself**.
+* Use the flag to bypass the wait:
+
+  * **`--prov-no-wait=1`**
+* This is useful in slow or restricted network environments.
+
+**5. Conflicts With Other Products**
+
+✔ **13. Other Security Tools Interfering?**
+
+* AV or EDR running without proper exclusions may:
+
+  * Block the sensor
+  * Delete files
+  * Prevent registration
+
+Make sure bidirectional exclusions are in place.
+
+**6. Logs (Last Resort)**
+
+✔ **14. Review Local Sensor Logs**
+
+* Location (Windows):
+  **`%localappdata%\Temp`**
+* Look for:
+
+  * Install logs
+  * Error codes
+  * Fail timestamps
+
+Then compare error codes with **CrowdStrike documentation**.
+
+**7. If All Else Fails**
+
+✔ **15. Open a Support Ticket**
+
+Include:
+
+* What steps were checked in the troubleshooting list
+* Logs
+* Error messages
+* OS info, installer version, network details
+
+Support will respect a well-prepared ticket.
+
+**8. Reduced Functionality Mode (RFM)**
+
+**What is RFM?**
+
+* Sensor goes into a **limited/safe mode** when it encounters unsupported conditions.
+
+**Common Causes**
+
+* **OS/kernel updates not yet supported** by the current sensor.
+* Sensor doesn’t understand the updated kernel → drops into RFM.
+
+**Behavior**
+
+* Limited or no logging
+* Reduced protection
+* Impacts visibility
+
+**Actions When a Sensor Enters RFM**
+
+1. **Wait for CrowdStrike to release a sensor update** supporting the newest kernel/OS.
+2. **Roll back the OS/kernel update**, or downgrade to a supported version.
+
+Use the **Sensor Dashboard** to identify sensors in RFM.
+
+**Summary**
+
+Module 4 provides a **repeatable troubleshooting checklist** covering:
+
+* OS compatibility
+* System requirements
+* Sensor state
+* Network connectivity
+* Installer correctness
+* Conflicts
+* Logs
+* RFM behavior
+
+Following the checklist solves nearly all installation and connection issues.
 
 ---
 Module 5: Uninstalling & Sensor updates
@@ -560,7 +723,173 @@ DON'T USE SPACES
 - Dashboard and Reports > all dashboards >
 - Exec Summary and sensor health are good ones
 
-Extra Notes:
+Key Takeaways:
+
+**1. Two Types of Host Groups**
+
+CrowdStrike host groups allow you to organize endpoints and assign policies.
+
+**A. Dynamic Host Groups (Preferred)**
+
+* Automatically assign hosts based on **filters/criteria**.
+* Examples of filters:
+
+  * OS = Windows / Linux / macOS
+  * Server vs. Workstation
+  * AD OU
+  * Sensor version
+  * Tags
+* A host automatically joins the group if it matches all filters.
+* You can set **multiple criteria** (AND logic) to make groups more granular.
+* **Flexible**, **automatic**, and ideal for production environments.
+* Supports **wildcards** (`*`) for pattern matching (e.g., Version = `5.*`).
+* Filters only appear once sensors send the relevant data back to the console.
+
+**Best practice:**
+Use dynamic host groups for **99% of real-world deployments**.
+
+**B. Static Host Groups**
+
+* You must manually assign hosts by:
+
+  * Hostname
+  * Host ID
+  * Agent ID (AID)
+* Host membership **does not change automatically**.
+* Useful for:
+
+  * Testing (e.g., sensor update pilots)
+  * High-control scenarios
+  * Special groups like traveling employees
+* Limited to **1000 hosts per static group**.
+
+**Downside:**
+Requires extremely clean asset naming conventions—rare in most organizations.
+
+**2. Agent ID (AID)**
+
+* Unique identifier for each sensor.
+* Problems occur in virtual/VDI environments if golden images are cloned **without sysprep** → multiple hosts sharing the same ID (big issue).
+
+**3. Host Group Overlaps & Policy Precedence**
+
+* A host **can belong to multiple groups**.
+* Each group may have a different policy assigned.
+* **Policy precedence** determines which one wins.
+  The highest-ranked policy applies to the host.
+* You will revisit precedence later in the course.
+
+**4. Rolling Out Host Groups**
+
+* Deploy gradually using a small sample group first.
+* Policies assigned to host groups start **blank**—you must configure them.
+* Policies include:
+
+  * Sensor update policies
+  * Prevention/Detection ML settings
+  * Custom policies
+  * RTR (Real Time Response)
+  * Firewall
+  * And many more
+
+The policy catalog is large—experience makes it easier.
+
+**5. Sensor Tagging**
+
+Two types of tags:
+
+**A. Sensor Grouping Tags (set at install time)**
+
+Used in filters for dynamic groups.
+
+**B. Falcon Grouping Tags (in console)**
+
+Additional metadata applied to hosts.
+
+**How many tags?**
+
+* Up to **50 tags per host**
+* Up to **1000 tags per customer**
+* Max length: **237 characters**
+
+**Tagging Syntax (IMPORTANT)**
+
+**Windows:**
+
+```
+GROUPING_TAGS=prod,critical
+```
+
+Placed *after* the `SSO=CustomerID` parameter.
+**Never use spaces.**
+Spaces require painful registry edits + reboot.
+
+**macOS:**
+
+```
+sudo falconctl grouping-tags=set prod,critical
+```
+
+**Linux:**
+
+```
+sudo /opt/CrowdStrike/falconctl --grouping-tags="prod,critical"
+```
+
+Use commas, **no spaces**, to add multiple tags.
+
+**6. Host Check-In Behavior & 45-Day Rule**
+
+* If a host **does not check in for 45 days**, it **ages out** of the console.
+* The sensor becomes inactive and must be **reinstalled**.
+
+Deleted hosts:
+
+* Clicking the **trash can** removes the host from the UI **but does NOT uninstall** the sensor.
+* Deleted/aged-out hosts remain in the trash for 45 days.
+
+**Recommendation:**
+Regularly compare:
+
+* Your internal inventory
+* CrowdStrike Host Management export
+
+to catch missing or inactive sensors.
+
+**7. Dashboards, Reports, and Monitoring**
+
+Useful dashboards:
+
+* **Executive Summary**
+* **Sensor Health**
+* **Inactive Sensors** (very important)
+
+Use filters such as:
+
+* Hostname
+* Days since last check-in (>30)
+* Version
+* RFM (Reduced Functionality Mode)
+
+You can export CSVs and monitor hosts approaching the 45-day expiration.
+
+Bookmark important pages for quick access.
+
+**8. Best Practices Summary**
+
+✔ Prefer **dynamic host groups**
+
+✔ Use granular filters and wildcards
+
+✔ Use static groups for test pilots or special cases
+
+✔ Tag hosts carefully (no spaces)
+
+✔ Monitor hosts with dashboards and exported reports
+
+✔ Reinstall sensors that haven’t checked in for 45 days
+
+✔ Be aware of policy precedence when hosts belong to multiple groups
 
 ---
 Module 7: Prevention policies
