@@ -55,9 +55,10 @@ What you’ll learn
 - Learn best practices for security operations: Gain an understanding of industry-standard security practices and how to apply them to your organization.
 - Cybersecurity Engineering Concepts for Configuring an EDR Console
 
+## Notes
 
-### Notes:
 ---
+
 Module 1: What is CrowdStrike/EDR
 - Introduction to CrowdStrike/EDR
 - Understanding Endpoint Detection and Response (EDR)
@@ -219,8 +220,6 @@ Module 2: Users and Roles
   - Can set up email notifications 
 
 Key Takeaways :
-
-✅ **Module 2 — Key Takeaways: Users & Roles**
 
 ⭐ 1. **Roles = Permissions Bundles**
 
@@ -406,6 +405,17 @@ Module 3: Installation
 - To check the falcon service is running : ps -e | grep falcon-sensor
 
 ✅ MacOS Installation (revisit to jotdown notes)
+- Elavated privillages needed
+- JAMF to script out and install, always more customization on the CLI compared to GUI
+- Grab the right sensor pkg file, double click and roll or go to CLI
+  - Install file on host
+  - License the sensor with CID
+- To install : sudo installer -verboseR -package \<installer filename> -target /
+- Register the sensor : sudo /Applications/Falcon.app/Contents/Resources/falconctl license \<CID>
+- sudo /Applications/Falcon.app/Contents/Resources/falconctl load
+- sudo /Applications/Falcon.app/Contents/Resources/falconctl stats
+
+** Kernel extensions (KEK) will need to be approved
 
 ✅ Installation Tokens (Registration Token)
 - Host setup > installation tokens
@@ -712,11 +722,214 @@ Module 5: Uninstalling & Sensor updates
 - Best practices for sensor management
 
 ✅ Steps for Uninstall 
+- Control panel > programs and features > uninstall
+- Download a CS uninstall tools from "Tools Downloads" in console
+  - CSUninstallTool.exe
+  - HKLM\system\crowdstrike should be gone
+- Find the host in host management, reveal maintenance token and copy
+  - Support > tool download > sensor removal tool based on OS > download it
+  - Uninstall via CLI :
+    - Windows :
+      - CSUninstallTool.exe MAINTENANCE_TOKEN=<token> /quiet
+      - CSUninstallTool.exe /quiet
+    - MacOS
+      - sudo /Library/CS/falconctl uninstall --maintenance-token (for 1 host)
+    - Linux
+      - Ubuntu : sudo apt-get purge falcon-sensor
+      - RHEL, CentOS, Amazon Linux : sudo dnf remove falcon-sensor
+      - SLES : sudo zypper remove falcon-sensor
+- Use "PUT" file of CSUninstallTool.exe from "Tools Downloads" onto CS files
+- Put the file on the host; Then run "run CSUninstallTool.exe MAINTENANCE_TOKEN=<token> /quiet  - from RTR
+- Valodate the sensor uninstall by navigating to HKLM\system\crowdstrike\ and C:\windows\system32\drivers\crowdstrike
 
+✅ Uninstall and Maintenance Protection
+- Can't uninstall without a token if maintenance protections is enabled
+- Bulk maintenance mode: Not recommended globally, one token to rule them all Sensor update has to be off
+- Use targeted hosts groups which require manual updates
+- Bulk Uninstall:
+  - 1 Token for all hosts in that policy or with the bulk maintenance mode enable  
 
+✅ Sensor Updating
+- Should be in a policy
+- Host setup and management > sensor update policies > create new > name it > create
+- Set the settings:
+  - uninstall and maintenance protection : on
+  - sensor version : Auto-latest or N-1 or whichever you want to set
+  - Auto-latest = test pilot machines to see how the latest sensor goes
+  - N-1 or N-2 for best practice
+  - Sensor version Updates off = manual management of the updated sensor versions
 
+✅ Update Throttling
+- Limit number of hosts performing updates at once
+- Think about the network resources it takes to update 5000 endpoints all at the same time...
+- Set the number of hosts peer minutes that you want to have updated in Support and Resources > General Settings
+- Best Practice:
+  - TEST groups!
+  - N-1
+  - N-2 for the paranoid
+  - Go Slow 
+
+Key Takeaways:
+
+⭐ 1. **Golden Rule: EVERYTHING in CrowdStrike = Groups + Policies**
+
+* Always manage hosts through **groups**, with **policies** assigned to those groups.
+* This applies to:
+
+  * Sensor uninstall
+  * Sensor update
+  * Maintenance mode
+  * Any environment-wide configuration
+
+⭐ 2. **Uninstalling Sensors — Best Practices**
+
+✔ To uninstall properly, your policy must:
+
+1. **Enable Sensor Uninstallation & Maintenance**
+2. **Turn OFF Sensor Version Updates**
+
+✔ Why?
+
+* Maintenance protection prevents tampering → requires **maintenance token**
+* Updates must be off so the uninstall isn’t overwritten by auto-update
+
+⭐ 3. **Sensor Uninstall Methods**
+
+**A. One-off / Local Uninstall**
+
+* Windows:
+  `Control Panel → Programs & Features → Uninstall CrowdStrike Falcon Sensor`
+* Mac/Linux equivalents available
+
+**B. Using the CrowdStrike Uninstall Tool**
+
+* Download at: **Support → Tool Downloads → Sensor Removal Tool**
+* Run with maintenance token:
+
+**Windows example:**
+
+```
+CrowdStrikeUninstallTool.exe --maintenance-token <TOKEN> --quiet
+```
+
+**Mac example:**
+
+```
+sudo falconctl uninstall --maintenance-token <TOKEN>
+```
+
+**Linux examples:**
+
+* Ubuntu: `sudo apt-get purge falcon-sensor`
+* RHEL/CentOS: `sudo yum remove falcon-sensor`
+* SUSE: `sudo zypper remove falcon-sensor`
+
+**C. Uninstall via RTR (Real Time Response)**
+
+* Upload uninstall tool via RTR
+* Use **put** command to drop file
+* Run uninstall command from shell
+* Must have RTR role assigned (active or admin)
+
+⭐ 4. **Verify Sensor Is Gone**
+
+**Windows:**
+
+* Registry key removed:
+  `HKLM\System\CrowdStrike`
+* Driver removed from System32
+
+**Linux/Mac:**
+
+* No CrowdStrike PID visible
+* Service/process removed
+
+⭐ 5. **Maintenance Protection & Tokens**
+
+ 🔹 Key rule:
+
+**If maintenance protection is enabled → you CANNOT uninstall without the maintenance token.**
+
+* Prevents:
+
+  * Threat actors disabling the sensor
+  * End-users uninstalling it to bypass security
+* Always enable maintenance protection (best practice)
+
+⭐ 6. **Bulk Maintenance Mode**
+
+Used to uninstall the sensor from **multiple hosts** using **one maintenance token**.
+
+ ✔ Good for:
+
+* Large, controlled migrations
+* Temporary maintenance on a defined subset
+
+ ❌ Bad (and dangerous) for:
+
+* Applying to ALL endpoints
+* Poor group management
+* Threat actor obtaining the token → mass uninstall
+
+Best practice:
+
+* Create **targeted host groups**
+* Use **bulk maintenance** ONLY for those specific hosts
+* Keep auto-updates OFF in that policy
+
+⭐ 7. **Updating Sensors (Sensor Update Policies)**
+
+ ✔ Sensor updates are always done through:
+
+`Host Setup & Management → Sensor Update Policies`
+
+ The policy defines:
+
+* Which **sensor version** endpoints will use
+* Whether **auto-update** is enabled
+* Throttling settings
+
+Version Strategy:
+
+* **N (latest)** = risky for production
+* **N-1** = recommended for production
+* **N-2** = conservative/stable option
+* Don’t go beyond N-2 → means you're falling behind too far
+
+⭐ 8. **Auto-Update Best Practices**
+
+* **Do NOT auto-update production**
+* Use **test groups** first:
+
+  * A few servers
+  * A few workstations
+  * Various OS types
+
+Let test groups run for a while before pushing to prod.
+
+⭐ 9. **Update Throttling**
+
+Prevents bandwidth overload when thousands of endpoints update.
+
+Configure in:
+
+`Support & Resources → General Settings → Sensor Update Throttling`
+
+ Set "hosts updated per minute":
+
+* Small org: 50
+* Medium: 250
+* Large: 500–1000
+  (Depends on network bandwidth)
+
+Always test throttling before full rollout.
+
+📌 **One-Sentence Summary**
+
+**Uninstallation and updates in CrowdStrike are managed through host groups and policies, require maintenance protection and tokens, should be carefully throttled, and must be tested using controlled groups before affecting production.**
 
 ---
+
 Module 6: Host management
 - Managing hosts using CrowdStrike/EDR
 - Understanding host groups and policies
