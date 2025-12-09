@@ -7,4 +7,8 @@ Wazuh HomeLab
 Key To understand:
 - Concept
 - Intergration
+
+Reference:
+
+https://tryhackme.com/room/wazuhct
   
