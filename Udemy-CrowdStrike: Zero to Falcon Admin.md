@@ -78,69 +78,110 @@ Module 1: What is CrowdStrike/EDR
 - Strong customer support
 - Lots of additional features within the console
 
-Extra Notes:
-- This is something that's pretty much it's going to be an agent.
-- So an MSI, an X that's going to be deployed out to all of your endpoints, whether those are servers or workstations.
-- And that agent is going to focus on detecting and responding to the security threats on those endpoints.
-- A couple of different techniques that it will use to be able to detect.
-- First we have the signature based detections.
-- These are basically matching on a signature a known pattern that has fired and it's already been pre-written for the signature.
-- It's very static.
-- So if we want to make a note.
-- We can kind of have our first type here.
-- Be signature based, and we'll say static is associated to that.
-- The second type of detection that you can have is behavioral.
-- Behavioral is going to say more of a dynamic approach.
-- So if we have static for signature, dynamic for behavioral this is going to detect on maybe behaviors associated with parent child relationships.
-- For anomalous behaviors occurring on files or processes. Or an example would be if PowerShell spawn command line which spawned malware. Exe it's going to be looking out for different behaviors that say, you know, this isn't really matching on a signature like a static detection would, but it's going to be an odd behavior that we wouldn't expect to be legitimate and could potentially be malicious in your environment.
-- And the tool will flag on the behavioral based detection.
-- There is also a third type of detection.
-- Heuristics.
-- If you have a heuristic type detection, this is where the EDR tool will spend some time to learn the baseline of your environment for what's normal.
-- It will take an encompass signature based and behavioral based detections and general activity occurring on your endpoints.
-- To say this is occurring pretty frequently, so it's probably normal.
-= And if there is an activity that occurs that's way outside the norm, it will make a heuristic based detection to say, I think this activity is highly anomalous based on what I've learned so far in your environment over, you know, three months plus of learning the baseline and it will fire a detection for you.
-- You may hear EDR, also referred to as XDR.
-- It's kind of like the new hip way of calling out EDR tools.
-- And it's just saying that it has X feature of whatever kind of feature you're looking for within that tool, kind of going outside of just the standard endpoint detection and response outside of just the endpoint.
-- Now we have a bunch of features that can help you additionally, with threat intelligence, Active Directory enumeration, vulnerability assessments, pretty much a whole XDR approach, instead of just detecting and responding to security threats based on signature behavioral or heuristic based detections, EDR can also leverage machine learning and AI to improve accuracy and efficiency.
-- It provides real time monitoring.
-- We'll put a little star next to that and detection of potential threats, real time monitoring.
-- I put a star next to it because it's going to be as close as possible to real time monitoring as it can get.
-- Sometimes the activity still occurs and your detection didn't block it, but it did give you an alert.
-- But it is only real time monitoring for as close as the detections are scheduled or set to check or scan your environment for those detections.
-- But sure, we'll say real time monitoring and you can also initiate automated responses to detected threats.
-- And it will provide detailed logs and forensics for further investigation and prevention.
-- We'll definitely see that in CrowdStrike as something that stands out.
-- But overall, an EDR tool, some competitors in the market.
-- CrowdStrike.
-- Carbon black.
-- Sentinel one.
-- Huntress.
-- All big players in the field of EDR tools.
-- And definitely some of the market leaders, I would say are these three right here.
-- So you're definitely on the right course to learn and master the CrowdStrike EDR tool.
-- Now what makes CrowdStrike stand out?
-- Definitely had to throw in this meme from the guys over at Red Canary.
-- EDR actually stands for Expensive Data Recorder.
-- Basically, just recording all of your events and doesn't actually block it.
-- We still need analysts out there and administrators out there to make sure that you're checking into the console, the EDR tool every day to to respond and evaluate the detections and alerts that are showing up.
-- But CrowdStrike, it has so many features.
-- It really is the definition of a true XDR platform.
-- There's so many new modules and additions that they're constantly making to the console, all to make it better and really increase the security posture of your organization.
-- And it's becoming also very flexible with deployment options.
-- Obviously, it supports multiple operating systems.
-- What we'll talk about later on has an extremely.
-- Friendly user interface.
-- If you're coming from a Splunk background, you're going to be able to pick up CrowdStrike pretty quickly as the query language for when your threat hunting will be based off of SPL, and all of the dashboards and widgets that are kind of built into CrowdStrike throughout the console leverage Splunk dashboarding familiarity, and they're running on Splunk searches, so it will look very familiar to you off the bat has a very strong customer support.
-- If you're a client of CrowdStrike, you have 24 access to their support portal to reach out to the CrowdStrike engineers.
-- Anyone that you would need, open your support case and they have great turnaround time.
-- And again, we've also talked about additional features within the console for vulnerability analysis threat Intel. Add enumeration.
-- They have modules in there for assessing your cloud environment.
-- They have a sandbox.
-- Environment to run sample malware within there, and just a really great tool overall.
-- Definitely one that falls under XDR and more consoles than more features within the console that I could probably ever list out.
+Key Takeaways :
+
+⭐ 1. **What is an EDR?**
+
+**EDR = Endpoint Detection & Response**
+
+* Deployed as an **agent** (MSI, PKG, etc.) to endpoints (servers + workstations)
+* Monitors, detects, and responds to threats on endpoints
+
+🔍 **Three Detection Types**
+
+1. **Signature-based (Static)**
+
+   * Matches known, pre-written patterns
+   * Similar to traditional antivirus
+   * Good for known threats, not adaptable
+
+2. **Behavioral-based (Dynamic)**
+
+   * Detects suspicious parent/child process behavior
+   * Example: *PowerShell → cmd → unknown malware.exe*
+   * Catches novel or obfuscated threats
+
+3. **Heuristic-based**
+
+   * Learns baseline of normal activity over time (months)
+   * Flags outliers or anomalies
+   * Combines signature + behavior + activity patterns
+
+⭐ 2. **EDR vs XDR**
+
+* **EDR** focuses on endpoint threats
+* **XDR** adds broader capabilities:
+
+  * Threat intelligence
+  * Vulnerability scanning
+  * Active Directory enumeration
+  * Identity protection
+  * Cloud workload assessments
+  * Sandbox analysis
+  * And more
+
+**CrowdStrike = a full XDR platform**, not just an EDR.
+
+⭐ 3. **EDR Capabilities**
+
+* Real-time (near real-time) monitoring
+* Machine learning + AI detections
+* Automated response actions
+* Detailed logs, telemetry, and forensic data
+* Investigation and threat hunting support
+
+⭐ 4. **Major EDR Players**
+
+* **CrowdStrike** (market leader)
+* **Carbon Black**
+* **SentinelOne**
+* **Huntress**
+
+⭐ 5. **Why CrowdStrike Stands Out**
+
+🎯 **Key Strengths**
+
+* True **XDR** platform with many optional modules
+* Rich features beyond EDR:
+
+  * Threat intelligence
+  * Vulnerability management
+  * Identity/AD security
+  * Cloud posture assessments
+  * Sandbox analysis
+* **Lightweight agent** and **minimal system impact**
+* **Broad OS support**
+* Extremely **user-friendly UI**
+
+🎯 **Splunk-Like Experience**
+
+* Query language resembles **SPL**
+* Dashboards and widgets feel Splunk-like
+* Easy transition for anyone with Splunk experience
+
+🎯 **Strong Customer Support**
+
+* 24/7 support portal
+* Fast response times
+* High-quality engineering team
+
+### 🎯 **Deployment Flexibility**
+
+* Modern, scalable cloud-native architecture
+* Quick onboarding & easy deployment
+
+⭐ 6. **Funny But True: “EDR = Expensive Data Recorder”**
+
+* EDR alone doesn't fix everything
+* You still need analysts & administrators reviewing alerts
+* CrowdStrike helps, but human monitoring is essential
+
+📌 **One-Sentence Summary**
+
+**EDR tools detect and respond to endpoint threats using signature, behavioral, and heuristic methods—CrowdStrike stands out as a powerful XDR platform with strong usability, broad features, and high-quality support.**
+
 ---
+
 Module 2: Users and Roles
 - User and role management in CrowdStrike/EDR
 - Understanding permissions and access levels
@@ -177,119 +218,125 @@ Module 2: Users and Roles
 - Endpoint security > crowstrike incidents
   - Can set up email notifications 
 
-Extra Notes :
-- We're talking about permissions roles capabilities for our users.
-- So when we think about roles in I.T.
-- Cybersecurity, we think of permissions.
-- In CrowdStrike.
-- They bundle up all of their permissions.
-- So if you can do X, Y, or Z into.
-- A rule, then you assign multiple roles to Your users.
-- That is how you manage permissions within CrowdStrike.
-- There's, I don't know, maybe 25 roles or so within the console.
-- And these are going to be assigned and administered controlled provisioned new users by the Falcon admin.
-- That's going to be you.
-- So you don't want to over.
-- Provision a new user with giving them too many roles that are outside of their assigned job duties or the functions that they need to take within the console.
-- Because we want to think of a security mindset when we go through administrating the CrowdStrike console and state that we don't want to have a user be overprivileged with an environment because if a threat actor A to ever comes in to the environment and they have compromised a user that is overprivileged, this is the terrible attempt at a crown.
-- I'm drawing on a user for someone having the King account or a God like account, because you've given them all 25 roles available within the console.
-- Now that threat actor is going to have godlike privileges within your CrowdStrike or your console,and you can assume how that will be absolutely devastating.
-- So we don't want to do that.
-- And when you're administrating new users, just keep in mind what role would be applicable to give them based on their job function and then leave it at that.
-- We're going to go over roles in the demonstration.
-- One important note that we will get to as well is.
-- The consideration around the real time response.
-- We're going to call that RTR From now on, this is pretty much where you drop into a live show onto an end point.
-- These there's only three of them.
-- And even if you are a Falcon administrator, you are not given any capabilities to remote into a host via RTR.
-- Off the bat, you need to be assigned one of the three rtr RTR roles to your account in order to be able to drop in.
-- So just keep that in mind.
-- It's a very important thing to note going down the list here.
-- Since this is in blue, it must be important.
-- So we have an associated domain email with your account that has to match the customer ID association with your console.
-- So what does this mean?
-- If my console that we'll see in the demonstration.
-- My email domain for my business is blue team wins dot com.
-- So my username is H Shaw at blue team wins dot com.
-- That means I cannot add my gmail, my Yahoo or any other email domain that is not matching the business email domain that I registered when I became a crowdstrike client to the console.
-- The email domain is going to be associated to your customer ID and you cannot add any other emails into your CrowdStrike console unless the email domain matches, you can open up a support ticket and ask for a one off with the team over at CrowdStrike to say, Hey, can you just add this Gmail account in?
-- I wish you the best of luck.
-- I think they will deny that based off of their security standards that they set and they really don't allow just generic emails to be added to the console.
-- It needs to be a business email.
-- So just wanted to make you aware of that.
-- Some of the top roles we have here, Falcon Admin, as we mentioned, doesn't come with RTR off the bat and it also doesn't come with the custom IOA.
-- IOA is indicator of attack.
-- Those are going to be your custom detections that you can write.
-- So if you want to perform any of those actions eaos or being able to drop into a shell onto a host, you need to assign the roles to yourself as a falcon admin or where it makes sense to the user who's going to be performing these functions as part of their job duty.
-- We have a prevention policy Admin Falcon Console Guest, a Dashboard Admin Desktop Support
-- Analyst Workflow
-- Author help Desk analysts.
-- There is again just so many roles within the console.
-- We're going to show how to get a quick overview of what that role does before you sign it to a user when we see it in the console.
-- So you don't have to memorize any of these, they're all available and well documented within the CrowdStrike documents.
-- But the big things to keep in mind is really the Falcon administrator will provision users with the roles your business email domain can only be added to your console, and the Falcon admin role does not come preconfigured with custom EOA or RTR capabilities.
-- Okay, let's dive in a little bit deeper on the RTR roles.
-- As I mentioned, there are only three read, only analyst, active responder and administrator.
-- So the read only analyst you basically got read only.
-- Sorry, but nobody trusts you with any capabilities at all within the console and your read only.
-- But I guess the flip side of that is you can't really do any damage because you got read only.
-- So you can you can't do any custom scripts, you can't do any put actions.
-- You pretty much can just look at files, look at logs, look at alerts, but you can't close any of the alerts.
-- You can't triage or make comments.
-- You can just look and observe.
-- So you get the smiley face as you are probably green stick in the environment.
-- But over time, hopefully you get promoted to at least the active responder where you can start using the get command and some custom scripts.
-- So this doesn't say custom scripts, it says some custom scripts.
-- So the responder is a little bit better then reader as you can do some additional commands.
-- When you're on a shell for a host and you can run some custom scripts.
-- But if you want to be able to run any custom script, you're going to need to be the RTR administrator.
-- The admin can run all the commands within their.
-- Think there's about 15 preconfigured commands that you can run on the shell, but you really don't need to know this number because you can create any custom script leveraging PowerShell and add that script to the console and then run that script on the endpoint.
-- And there is no limit to what PowerShell command you can put into a script.
-- All are fair game.
-- So really no limitation for any kind of action you can take in RTR, at least not one that, I've come across yet.
-- And the ability to upload files, download files, run commands, admin is going to be able to do anything and not run into any permission issues at all.
-- Let's say you had a new user who you want to be able to view files on a host but not be able to pull any off.
-- Which role would that fall under?
-- That would be the read only analyst.
-- So let's keep the RTR roles in mind.
-- Again, if you're a Falcon admin as your role and you notice you can't connect to a remote host, that is because you do not have one of these three roles assigned to you.
-- OC How to add a New user.
-- Our favorite thing to do is provision users and add people to the console.
-- Because we are administrators, we're going to go to host setup Falcon users and user management.
-- Here you're going to be able to click the three dot ellipses on the side or the create user.
-- Button that will be there and it will walk you through all the steps to fill out their first name, last name, their email.
-- And of course, as we mentioned, that email needs to be associated to the business domain email that's registered with the side of the console, the customer ID.
-- Keep that in mind.And.
-- The rolls.
-- This is where you can assign the roles that you're going to give that new user.
-- Now, after you create the user, there's a couple of actions you can do.
-- If you go back into the user management, let's say that we now have the user, Haley at Blue Team Consulting. Dot com.
-- Well, if we click on the ellipsis, it'll bring up the details and we can do all of the following actions in there.
-- You can reset the users MFA or to two factor authentication.
-- You can choose the option to reset a password, you can delete the user, etc. So creating a user that's the create user button.
-- And then once the user is created, the ellipses are three dots, whatever this is called.
-- That is where you can pull up all the details and take additional actions on the user.
-- Now, the only thing you can really change after the user is created is their first name and their last name. That's it.
-- Once the email is registered, it's kind of locked in.
-- You can change their roles to you can add or remove some roles as the as an admin, depending on your permissions, but you're not going to really be able to change the email address.
-- What you would do is delete the user and then re add them with a new email invitation.
-- Setting up email notifications emails.
-- Good rule filtering is always good to go with outlook because otherwise we get overwhelmed and we all love emails.
-- Anyways, you're going to go to support and resources general settings and then scroll all the way to the bottom.
-- And you can also set up email notifications through endpoint security crowd score incidents and then click on an incident and be able to set up email notifications there.
-- But Hayley, what if you go to the incidents page and you don't see the option to set up email notifications?
-- Well, what roles are assigned to you?
-- You're going to ask yourself that a lot when you're in the console for if you can do something or if you can't do something, ask yourself what roles you're assigned to and maybe you're not supposed to be able to see it or perform that function.
-- Also, what is an incident?
-- An incident is made up of multiple detections.
-- When CrowdStrike feels that a certain sequence of events in a timeline.
-- Triggers enough detections for it to be overly concerned or really say this qualifies to be promoted from four separate detections to one incident.
-- It will combine all of the detections and put them into your incidence page.
-- The incidence page is going to be different than your detections page, but you can also view your incidence within your detections page.
-- So if I didn't confuse you enough with what I just said, we'll be sure to cover that and the demonstration.
-- But just be aware that there is a separate section in the console to view all of your incidents, and it's definitely a bit more granular with the descriptions of what's going on.
-- As CrowdStrike felt, those series of detections were a bit more serious and they kind of give you a nice write up in description and additional details about the events that happened.
+Key Takeaways :
+
+✅ **Module 2 — Key Takeaways: Users & Roles**
+
+⭐ 1. **Roles = Permissions Bundles**
+
+* CrowdStrike uses **roles** to group permissions.
+* Users can have **multiple roles** assigned.
+* **Do NOT over-provision** users—follow least privilege.
+
+  * Overprivileged accounts = major risk if compromised.
+
+⭐ 2. **Email Domain Requirement**
+
+* **User email must match the customer’s registered domain.**
+  Example: If the customer ID is tied to *blueteamwins.com*, all users must have *@blueteamwins.com*.
+* Gmail, Yahoo, Hotmail, etc. **cannot** be added.
+* CrowdStrike almost never approves exceptions.
+
+⭐ 3. **Critical Role Behavior**
+
+🔹 **Falcon Administrator**
+
+* Full console admin but **missing two capabilities by default**:
+
+  1. **RTR (Real Time Response)**
+  2. **Custom IOA** (Indicators of Attack)
+* Must add those roles **manually** if needed.
+
+🔹 Other common roles:
+
+* Prevention Policy Admin
+* Falcon Console Guest
+* Dashboard Admin
+* Desktop Support Analyst
+* Workflow Author
+* Help Desk Analyst
+  (Each well-documented in the console.)
+
+⭐ 4. **RTR (Real Time Response) Roles**
+
+RTR = Remote shell / live terminal into an endpoint.
+
+Only **three** RTR roles exist:
+
+1️⃣ **RTR Read-Only Analyst**
+
+* View only
+* No actions, no scripts, no closing alerts
+* Safest for entry-level analysts
+
+2️⃣ **RTR Active Responder**
+
+* Some “get” commands
+* Limited custom-script execution
+* Basic containment actions
+
+3️⃣ **RTR Administrator**
+
+* **Full RTR capabilities**
+* Run *all* commands
+* Run *any* custom PowerShell script
+* Upload/download files, take full action
+* No practical limitation
+
+➡️ **Even Falcon Admins cannot use RTR unless one of these roles is assigned.**
+
+⭐ 5. **Adding a New User**
+
+**Path:**
+`Host Setup → Falcon Users → User Management`
+
+Steps:
+
+1. Click **Create User**
+2. Enter name, email (must match org domain)
+3. Assign roles
+4. Save
+
+After creation (via the 3-dot ellipsis):
+
+* Reset password
+* Reset MFA
+* Delete user
+* Edit first/last name
+* Add/remove roles
+  (Note: Email cannot be changed—delete & recreate instead.)
+
+⭐ 6. **Email Notifications**
+
+Two ways to configure:
+
+Option 1 – General Settings
+
+`Support & Resources → General Settings → (scroll to bottom)`
+
+Option 2 – Incident Notifications
+
+`Endpoint Security → Crowd Score → Incidents → Notification Settings`
+
+If you **don’t see notification options**:
+
+* You probably **don’t have the right role**.
+
+⭐ 7. **Incidents vs Detections**
+
+* **Detections:** Individual alerts/events.
+* **Incidents:**
+
+  * A *collection of related detections*
+  * CrowdStrike automatically promotes groups of detections into a **single incident** when the combined activity is significant.
+  * Richer description, additional context, and a consolidated timeline.
+
+Incidents have their own console section but can also be viewed from the detections area.
+
+📌 **One-Sentence Summary**
+
+**Users in CrowdStrike are permissioned through roles, email domains must match the customer ID, RTR requires special roles, and incidents are grouped detections with more detailed context.**
+
 ---
 
 Module 3: Installation
@@ -658,6 +705,7 @@ Module 4 provides a **repeatable troubleshooting checklist** covering:
 Following the checklist solves nearly all installation and connection issues.
 
 ---
+
 Module 5: Uninstalling & Sensor updates
 - Uninstalling CrowdStrike/EDR from endpoints
 - Updating CrowdStrike/EDR sensors
@@ -929,9 +977,169 @@ endpoint security > prevention policy > create new > platform > name > create
 - Phase 3 : The ideal standard level of protection for your hosts
   - Should try to get there in 90 days to ensure adequate protection of your endpoints     
 
-Extra Notes:
+Key Takeaways:
+
+This module explains how **CrowdStrike prevention policies** work, how to configure them, and how to choose the right phase when rolling out Falcon to an environment.
+
+**1. Big Picture: How Prevention Policies Work**
+
+CrowdStrike uses a layered structure:
+
+**1. Hosts → placed into Host Groups**
+
+* Host groups can be **dynamic** (recommended) or **static**.
+
+**2. Policies → created individually**
+
+Examples of individual policy types:
+
+* **Next-Gen AV policy**
+* **IOA (Indicators of Attack) policy**
+* **Firewall policy**
+* **Sensor update policy**
+* **Machine learning & behavior policies**
+* **Sensor visibility settings**
+
+Each of these is configured separately.
+
+**3. Prevention Policy → bundle of all policies**
+
+A **Prevention Policy** = a collection of multiple individual policies.
+
+**4. Prevention Policy → assigned to Host Groups**
+
+Host groups receive one assigned **prevention policy**, which determines all protection settings for that group.
+
+**2. Detection vs. Prevention Sliders**
+
+CrowdStrike uses **sliding scales** from:
+**Cautious → Normal → Aggressive → Extra Aggressive**
+
+**🚨 IMPORTANT RULE**
+
+**Detection must always be set *higher* (more aggressive) than Prevention.**
+Prevention should never exceed Detection.
+
+Mnemonic: **Daring Hippos Prefer Lasagna**
+
+* **D**etections = **Higher**
+* **P**reventions = **Lower**
+
+Why?
+
+* Detection only *observes*
+* Prevention *acts* (blocks/terminates)
+* You cannot prevent more than you detect
+* Preventing without detecting = irrational and unsafe
+
+**3. Policy Precedence**
+
+A host can belong to **multiple host groups**, and therefore multiple policies.
+
+CrowdStrike resolves this using **Precedence**:
+
+* The **lower the number**, the **higher the precedence**.
+* The policy with the **highest precedence (rank 1)** wins.
+* Host falls back to **Default Policy** if no other policy applies.
+
+**Use the Default Policy as a “catch-all detector”**
+
+If a host lands in the Default Policy:
+
+* It means it did **not** match any dynamic/static group.
+* This indicates something is wrong (filtering, group assignment, OS mismatch, etc.).
+
+**4. Out-of-the-Box Prevention Policies**
+
+CrowdStrike ships with:
+
+1. **Default Policy** (catch-all)
+2. **Phase 1**
+3. **Phase 2**
+4. **Phase 3** (optimal protection)
+
+**Which phase should you apply during deployment?**
+
+**If the environment already has an existing AV solution (McAfee, Symantec, etc.):**
+
+➡️ Start with **Phase 1**
+
+* Least aggressive
+* Reduces false positives
+* Avoids conflict with the existing AV
+* Safer during coexistence
+
+**If the environment does NOT have an AV currently installed:**
+
+➡️ Start with **Phase 2**
+
+* Provides moderate protection immediately
+* No risk of conflicting with another AV
+* Prevents leaving the environment exposed
+
+**Phase 3**
+
+* Final target for all hosts
+* Most protection
+* Should be reached **within 90 days** of deployment
+* Tuned and stable environment required
+
+**5. Recommended Rollout Strategy**
+
+Falcon recommends a **tiered rollout** with tuning at each stage.
+
+**General timeline (best practice):**
+
+* **Days 0–30:** Phase 1
+* **Days 30–60:** Phase 2
+* **Days 60–90:** Phase 3 (optimal)
+
+Adapt based on environment size:
+
+* Small org (500 endpoints): accelerate
+* Large org (10k–15k endpoints): move slower, follow 90-day structure
+
+**Why gradual?**
+
+* Prevent excessive false positives
+* Tune detections & apply exclusions
+* Avoid impacting business operations
+* Handle conflicts with legacy AV tools
+
+**6. Creating and Enabling a Prevention Policy**
+
+Steps:
+
+1. Go to **Endpoint Security → Prevention Policies**
+2. Click **Create New**
+3. Choose platform (Windows / macOS / Linux)
+4. Name the policy
+5. Configure all detection/prevention sliders and settings
+6. **Save**
+7. **Enable** the policy (not enabled by default)
+8. Assign it to the appropriate host group
+9. Adjust **precedence** if needed
+
+**7. Administrator Best Practices**
+
+✔ Understand the separation between **policies vs. prevention policies**
+✔ Keep Detection sliders more aggressive than Prevention
+✔ Use a tiered rollout to minimize false positives
+✔ Monitor hosts landing in the **Default** policy
+✔ Regularly tune exclusions and whitelist legitimate apps
+✔ Move all hosts to **Phase 3** within 90 days
+✔ Test everything on small pilot groups before broad rollout
+
+**8. Mental Model Summary**
+
+* **Host groups** decide *who* gets the policy
+* **Policies** define *what* the rules are
+* **Prevention policy** = bundle of all rules
+* **Precedence** determines *which* one wins
+* **Phase policies** control *how aggressive* the deployment is
 
 ---
+
 Module 8: Custom IOAs & IOC Management
 - Creating custom Indicators of Attack (IOAs) in CrowdStrike/EDR
 - Understanding IOA rules and configurations
@@ -983,6 +1191,166 @@ Module 8: Custom IOAs & IOC Management
 
 <img width="1092" height="544" alt="Module 8 - Custom IOAs   IOC Management-4" src="https://github.com/user-attachments/assets/05b78b6f-3857-476a-ac05-739b34c2e6ef" />
 
+Key Takeaways:
+
+⭐ **1. IOA (Indicators of Attack)**
+
+IOAs define *behavioral* patterns to detect or prevent malicious activity.
+They rely on **regular expressions** for matching.
+
+**What IOAs Can Match**
+
+* File names
+* File paths
+* Process names
+* Command-line arguments
+* Parent process / grandparent process
+* Domains / URLs
+* IP addresses (Windows only)
+* Network connections (Windows, macOS)
+
+**Syntax**
+
+* **IOAs use REGEX**
+* **Exclusions use GLOB syntax**
+
+  * Much simpler, no escaping slashes or spaces
+* In IOAs, all unused fields must be `.*`
+
+**Actions IOAs Can Take**
+
+(depending on OS + rule type)
+
+* Monitor
+* Detect
+* Block & Kill
+* Block Execution
+
+**IOA Rule Types**
+
+| Rule Type          | Windows | macOS | Linux |
+| ------------------ | ------- | ----- | ----- |
+| Process Creation   | ✅       | ❌     | ❌     |
+| File Creation      | ✅       | ❌     | ❌     |
+| Network Connection | ✅       | ⚠️    | ❌     |
+| Domain Name        | ✅       | ❌     | ❌     |
+
+⭐ **2. IOA Workflow (Must Know)**
+
+**Order matters!**
+
+1. **Create IOA Rule Group**
+2. **Add IOA rules (regex)**
+3. **Enable each rule individually**
+4. **Enable the rule group**
+5. **Assign IOA group to a Prevention Policy**
+
+> Then that **prevention policy** is assigned to a **host group**.
+
+⭐ **3. Testing IOAs (Critical!)**
+
+Bad regex can break production systems.
+
+**Always test:**
+
+* Use Investigate → Search to see what files/processes match your regex
+* Use Console IOA tester (not fully reliable)
+* Test on a small host group first
+
+⭐ **4. Regex Gotchas**
+
+* Use full and correct regex—escaping required
+
+* Incorrect: `.*a.exe`
+
+  * This matches too much (anything ending in “a”)
+
+* Correct: `.*\\a\.exe`
+
+* Escape:
+
+  * Directory separators `\\`
+  * Dots `\.`
+  * Spaces `\s`
+
+⭐ **5. What IOAs Are Useful For**
+
+* Blocking malicious IPs (Windows only)
+* Blocking malicious domains
+* Blocking suspicious command-line patterns
+* Blocking PowerShell behaviors
+* Blocking specific file paths
+* Blocking parent/child process combinations
+* Detecting C2 infrastructure
+* Creating custom detections for red-team simulations
+
+⭐ **6. IOC Management**
+
+Separate from IOAs (different menu entirely).
+
+**Location:**
+Endpoint Security → IOC Management
+
+**You can upload:**
+
+* IPs
+* Hashes
+* Domains
+
+**Allows:**
+
+* Bulk uploads
+* Assigning to host groups
+* Tagging (C2, malware family, campaign name, date, etc.)
+
+**IOC Actions**
+
+| IOC Type | Detect      | Block           | Allow     | Nothing |
+| -------- | ----------- | --------------- | --------- | ------- |
+| IP       | ✅           | ❌ (Detect only) | ❌         | ✅       |
+| Hash     | ✅           | ✅               | Allowlist | ✅       |
+| Domain   | Detect only | ❌               | ❌         | Yes     |
+
+> **Important:** IP & Domain *blocking* must be done via **IOAs**, not IOC Management.
+
+⭐ **7. IOC Limitations**
+
+* IP blocking in IOC = detect-only
+* Domain IOC = detect-only
+* Endpoint-only enforcement → *not a replacement for firewall blocks*
+* Always block malicious IPs/domains at the network perimeter too
+
+⭐ **8. Overwatch & Detection Icons**
+
+**Color severity scale**
+
+* Blue → Informational
+* Green → Low
+* Yellow → Medium
+* Orange → High
+* Red → Critical
+
+**Important Icons**
+
+* **Green shield + check** → Process blocked
+* **White/gray shield** → Process killed
+* **Linked circles** → Part of an Incident
+* **Falcon icon** → OverWatch detection (CrowdStrike threat hunters)
+
+Each detection is mapped to a **MITRE ATT&CK tactic/technique**.
+
+⭐ **9. Best Practices**
+
+* Always test IOAs before rollout
+* Use small pilot groups first
+* Use tags to track history and context
+* Use IOAs for advanced behavioral security
+* Use IOC Management for indicators-based enrichment
+* Double down with network-level controls (firewalls, IPS)
+
+⭐ **One-Sentence Summary**
+
+**IOAs = behavior-based custom detection & prevention using regex; IOC Management = static indicator tracking using detect/block/allow, with major limits on IP/domain blocking.**
 
 ---
 
@@ -1034,48 +1402,152 @@ Ref: https://www.sonicwall.com/support/knowledge-base/crowdstrike-cs-exclusions/
   - Local qurantine on a host=30 days
   - Cloud storage=90 days (90 days together max, not 120 days)
 
+Key Takeaways:
 
+✅ **CrowdStrike — Exclusions & Quarantine: Key Points**
 
+⭐ 1. **What Exclusions Are**
 
+Exclusions = **whitelisting** trusted files, processes, or paths so CrowdStrike does **not detect or block them**.
 
+Used for:
 
+* False positive tuning
+* Allowing legitimate company-wide apps
+* Allowing AV coexistence
+* Preventing interference with IT tools (RMMs, backup tools, etc.)
 
+Exclusions can apply:
 
+* To **all hosts**
+* Or **specific host groups**
 
+⭐ 2. **Three Types of Exclusions**
 
+**1. Machine Learning (ML) Exclusions**
 
+* Use **GLOB syntax**
+* Manual entry or created directly from detection page
+* Most common type
+* Used for whitelisting file paths, executables, etc.
 
+**2. IOA Exclusions**
 
+* Use **REGEX**
+* Created only via detection page or Custom IOA section
+* Behavioral allow-listing (e.g., allow certain PowerShell commands)
 
+**Note:**
+If added in **IOA section**, you're making a *block rule*;
+If added in **Exclusions**, you're making an *allow rule*.
 
+**3. Sensor Visibility Exclusions (Dangerous)**
 
+⚠️ **Highest risk** – sensor will completely ignore the process/path.
 
+* No detections
+* No logs
+* Full blind spot
+* Use **only as last resort**
+* Never exclude broad paths (e.g., `C:\Program Files\**`)
 
+⭐ 3. **Glob Patterns (Used for ML Exclusions)**
 
+Glob syntax = simpler than regex.
 
+Key Rules:
 
+* Assumes **drive letter automatically**
+* One exclusion = **one pattern only**
+* `*` = match within a directory
+* `**` = recursive through subdirectories
+* Doesn't cross directory separators
+* Easier to whitelist software (e.g. RMM tools, AV products)
 
+Example (whitelist Malwarebytes):
 
+```
+*/ProgramData/Malwarebytes/* 
+```
 
+⭐ 4. **How to Add an Exclusion (Workflow)**
 
+1. From a detection → Get triggering file, hash, or command line
+2. Copy the specific field
+3. Go to
+   **Endpoint Security → Exclusions → Machine Learning**
+4. Choose scope (all hosts or specific groups)
+5. Paste pattern
+6. Check **“Detections and Preventions”**
+7. Test pattern
+8. Create
 
+⭐ 5. **Why Testing Is Critical**
 
+Improper exclusions can:
 
+* Disable protection
+* Hide real attacks
+* Allow malware to run undetected
 
+Always test Glob or Regex to ensure it only allows intended files.
 
+⭐ 6. **Quarantine Files**
 
+CrowdStrike can quarantine malicious files **locally + in cloud**.
 
+**Requirements**
 
+* Must be enabled in the prevention policy
+* Must have the correct admin role
+* **Not available for Linux** (as of the course)
 
+**Locations**
 
+**Windows:**
+`C:\Windows\System32\drivers\CrowdStrike\Quarantine\`
 
+**macOS:**
+`/Library/Application Support/CrowdStrike/Falcon/Quarantine/`
 
+**Retention**
 
+| Location   | Duration                                         |
+| ---------- | ------------------------------------------------ |
+| Local host | 30 days                                          |
+| Cloud      | Up to 90 days total (includes the 30 days local) |
 
+Not 30 + 90 = 120; total lifecycle = 90 days max.
 
+**Passwords**
 
+* Downloaded quarantine ZIP password = **infected**
 
+Purpose:
+Makes you stop and think before opening potential malware.
 
+**Upload Limit**
 
+* Max upload size = **32 MB**
 
+⭐ 7. **When to Use Which Exclusion Type**
 
+| Need                                  | Use                                       |
+| ------------------------------------- | ----------------------------------------- |
+| Whitelist file paths                  | **ML exclusion (glob)**                   |
+| Allow certain behavior                | **IOA exclusion (regex)**                 |
+| Last-resort, hide activity completely | **Sensor Visibility (avoid if possible)** |
+| AV coexistence                        | ML exclusions for AV folders              |
+
+⭐ 8. **Best Practices**
+
+* Use **specific**, not broad, glob patterns
+* Avoid Sensor Visibility except for extreme edge cases
+* Document exclusions and why they exist
+* Test all patterns before rollout
+* Apply to host groups when possible—not global
+* Quarantine files should be reviewed quickly (risky to store)
+
+📌 **One-Sentence Summary**
+
+**Exclusions safely whitelist trusted files/processes (ML = glob, IOA = regex, Sensor Visibility = risky blind spots), while quarantine temporarily isolates suspicious files for up to 90 days total between host and cloud.**
