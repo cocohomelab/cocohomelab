@@ -6,6 +6,12 @@ Modules:
 
 ---
 
+Considerations:
+-	ePO License Key
+-	McAfee Grant Number
+
+---
+
 McAfee ePO (Trellix ePolicy Orchestrator)
 
 Core Components:
@@ -17,8 +23,6 @@ Core Components:
 - Extensions (Modules installed on ePO)
 - Policies + Tasks
 ---
--	ePO License Key
--	McAfee Grant Number
 
 - Detailed ePO Server Configuration
     - ePO Database Server
@@ -39,9 +43,10 @@ Core Components:
 |     McAfee Agent                           |     McAfee Agent                                      |
 |     VirusScan Enterprise                   |     VirusScan Enterprise 8.8                          |
 
-   - Distributed Repositories
-            - Branch
-            - SuperAgents
+- Distributed Repositories
+     - Branch (Current branch, Evaluation branch, Previous branch)
+     - SuperAgents as distributed repositories
+
 - Detailed Agent Configuration
       - tets
 -  ePO Server Automation
@@ -204,3 +209,14 @@ Agent + Windows client machines
 ---
 
 ### Policies + Tasks - McAfee Data Leakage Protection Endpoint
+
+
+Reference:
+
+https://docs.trellix.com/bundle/epolicy-orchestrator-landing/page/UUID-52b91793-68f9-a8ac-141c-104824763f9a.html
+
+https://docs.trellix.com/bundle/agent-landing/page/UUID-05c4d4b5-7061-c179-db13-1d481822ed71.html
+
+https://docs.trellix.com/bundle/endpoint-security-10.7.x-product-guide-windows/page/UUID-9ee1547e-bfc6-7842-bcc4-a77a25a3300c.html
+
+https://docs.trellix.com/bundle/data-loss-prevention-11.1.x-product-guide/page/GUID-916E5282-2B84-4150-A8CD-5F6F82238F81.html
