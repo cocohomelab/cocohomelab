@@ -37,12 +37,6 @@ Core Components:
 |                                            |     GTI Proxy Appliance                               |
 |     Help Desk Tool                         |     Help Desk Tool for MCP and DLPE                   |
 |     McAfee Agent                           |     McAfee Agent                                      |
-|     Policy Auditor                         |     Benchmark Editor                                  |
-|                                            |     Benchmark Editor Content Distributor              |
-|                                            |     Findings                                          |
-|                                            |     PACore                                            |
-|                                            |     PARollup                                          |
-|                                            |     Policy Auditor                                    |
 |     VirusScan Enterprise                   |     VirusScan Enterprise 8.8                          |
 
    - Distributed Repositories
