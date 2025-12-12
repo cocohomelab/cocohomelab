@@ -2,7 +2,7 @@ McAfee ePO (Trellix ePolicy Orchestrator) On-prem
 
 Modules:
 - McAfee Threat Protection (Endpoint Security - ENS)
-- McAfee Data Leakage Protection Endpoint
+- McAfee Data Leakage Protection Endpoint (DLPe)
 
 ---
 
