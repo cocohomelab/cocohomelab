@@ -64,7 +64,7 @@ Core Components:
     - Golden Image (Windows Workstation and Server OS)
     - ePO server push
     - ePO server web
-    - Deployment tool : SCCM, Tanium
+    - Software Deployment : SCCM, Tanium
     - Microsoft GPO
     - Manual Installation
         - FramePkg.exe /Install=Agent /ForceInstall /Silent
@@ -214,6 +214,52 @@ Agent + Windows client machines
 
 ### Policies + Tasks - McAfee Data Leakage Protection Endpoint
 
+#### 🖥️  WINDOWS WORKSTATIONS (Windows 10) — Recommended Policies & Tasks
+
+- Protected Content
+    - Tax File Numbers
+    - Confidential Documents
+    - Credit Card Numbers
+    - Identification Number (HIN) and Security Reference Number (SRN)
+    - Merchant Account IDs
+    - CBA Netbank IDs
+    - CBA Streamline Account Numbers
+
+- Protection Rules
+    - Clipboard Use
+    - Cloud Upload
+    - Email
+    - File System
+    - PDF/Image Writing
+    - Printing
+    - Removable Storage
+    - Screen Capture
+    - Web Post
+ 
+#### 🖥️ WINDOWS SERVER (2012/2016/2019/2022) — Different Approach
+
+- Protected Content
+    - Tax File Numbers
+    - Confidential Documents
+    - Credit Card Numbers
+    - Identification Number (HIN) and Security Reference Number (SRN)
+    - Merchant Account IDs
+    - CBA Netbank IDs
+    - CBA Streamline Account Numbers
+
+- Protection Rules
+    - Clipboard Use
+    - Cloud Upload
+    - Email
+    - File System
+    - PDF/Image Writing
+    - Printing
+    - Removable Storage
+    - Screen Capture
+    - Web Post
+
+
+---
 
 Reference:
 
