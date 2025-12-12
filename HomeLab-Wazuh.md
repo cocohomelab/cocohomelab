@@ -42,6 +42,7 @@ Native integrations for threat detection.
 #### Future Enhancement :
 - intergrate with n8n
 - Integrate with MCP (Model Context Protocol)
+- Wazuh–MISP Integration
 
 ⭐ Summary Mapping (Simple Version)
 
@@ -68,7 +69,13 @@ Reference:
 https://tryhackme.com/room/wazuhct
 
 https://docs.trellix.com/bundle/mvision-endpoint-detection-and-response-product-guide/page/UUID-539597b6-3a64-e122-8981-097a24897557.html
-  
+
+https://github.com/socfortress/Wazuh-Rules : Advanced Wazuh Detection Rules
+
+https://www.misp-project.org/2025/10/06/wazuh-integration.html/ : Wazuh–MISP Integration
+
+https://github.com/MISP/wazuh-integration : Wazuh–MISP Integration
+
 ✅ How to make your GitHub notes count as a real portfolio:
 
 Do these and it becomes a strong portfolio:
