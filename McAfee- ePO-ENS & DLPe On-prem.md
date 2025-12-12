@@ -9,6 +9,7 @@ Modules:
 Requirements:
 -	ePO License Key
 -	McAfee Grant Number
+-	[ePO Requirements](https://docs.trellix.com/bundle/epolicy-orchestrator-5.10.0-installation-guide/page/UUID-f7e1ef8e-73e4-dda1-d188-b4c3650e00eb.html)
 
 ---
 
