@@ -30,7 +30,7 @@ Core Components:
         - Microsoft SQL Server 
     - Agent Handlers
         - Default (1) 
-    - Check in Extensions and Master Repository
+    - Check in Extensions and Packages in Master Repository
       
 |      Product                               |      Extension Name                                   |
 |--------------------------------------------|-------------------------------------------------------|
@@ -49,7 +49,7 @@ Core Components:
      - SuperAgents as distributed repositories
 
 - Detailed Agent Configuration
-      - tets
+      - to add
 -  ePO Server Automation
     - Client Tasks (Install Endpoints)
     - Client Tasks: McAfee Agent
@@ -207,6 +207,8 @@ Agent + Windows client machines
 - Reinstall module on Windows client machines
 - Clean up 300 MB of free disk space on Windows client machines
 - McAfee Profiler to create exceptions for trusted files, applications, or paths to improve performance without creating a security risk
+- C:\Program Files\McAfee\Common Framework\CmdAgent.exe -P
+- C:\Program Files\McAfee\Common Framework\CmdAgent.exe -E
 
 ---
 
