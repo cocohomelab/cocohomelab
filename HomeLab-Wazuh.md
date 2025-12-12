@@ -8,10 +8,40 @@ Key To understand:
 - Concept
 - Intergration
 
+---
+#### Security Tools / Threat Intelligence
 
-
+Native integrations for threat detection.
+- VirusTotal
+- YARA
+- OSQuery
+- STIX/TAXII threat feeds
+- AlienVault OTX
+- CIS Benchmark SCAP
+- MITRE ATT&CK mapping (built-in rules)
 
 ---
+
+ #### Test Enviroment
+ - Micro Workstation (physical) : RHEL + Wazuh
+ - VM run on Windows 10 : Windows 10 
+ - VM run on Windows 10 : Ubuntu
+
+---
+#### Deployment
+
+4 step deployment strategy that actually works: planning phase.
+
+- Map your infrastructure first (servers, workstations, network segments)
+- Create deployment groups based on OS and function
+- Use automation tools (Ansible, PowerShell, bash scripts)
+- Set up centralized configuration management
+
+---
+
+#### Future Enhancement :
+- intergrate with n8n
+- Integrate with MCP (Model Context Protocol)
 
 ⭐ Summary Mapping (Simple Version)
 
