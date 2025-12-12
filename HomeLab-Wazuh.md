@@ -69,11 +69,11 @@ Commercial EDRs exceed Wazuh in:
 - Deep kernel visibility
 
 
-Reference:
+Reference :
 
 https://tryhackme.com/room/wazuhct
 
-https://docs.trellix.com/bundle/mvision-endpoint-detection-and-response-product-guide/page/UUID-539597b6-3a64-e122-8981-097a24897557.html
+https://cyberkarta.com/blog/Wazuh-System-Inventory-Services-Ports-and-Protocols-f0952719c57b
 
 https://github.com/socfortress/Wazuh-Rules : Advanced Wazuh Detection Rules
 
