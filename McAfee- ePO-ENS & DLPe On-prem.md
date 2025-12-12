@@ -222,8 +222,8 @@ Agent + Windows client machines
     - Credit Card Numbers
     - Identification Number (HIN) and Security Reference Number (SRN)
     - Merchant Account IDs
-    - CBA Netbank IDs
-    - CBA Streamline Account Numbers
+    - Netbank IDs
+    - Streamline Account Numbers
 
 - Protection Rules
     - Clipboard Use
@@ -244,8 +244,8 @@ Agent + Windows client machines
     - Credit Card Numbers
     - Identification Number (HIN) and Security Reference Number (SRN)
     - Merchant Account IDs
-    - CBA Netbank IDs
-    - CBA Streamline Account Numbers
+    - Netbank IDs
+    - Streamline Account Numbers
 
 - Protection Rules
     - Clipboard Use
