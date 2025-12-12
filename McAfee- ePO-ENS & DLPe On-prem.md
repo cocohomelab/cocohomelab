@@ -259,7 +259,10 @@ Agent + Windows client machines
     - Web Post
 
 ### Troubleshooting
-- Policy Exemption and Exceptions Processing System (PEEPS) : DLP By-Pass 
+- Policy Exemption and Exceptions Processing System (PEEPS) : DLP By-Pass
+    - Generate DLP Client Bypass Key or;
+    - Generate DLP Release From Quarantine Key
+ 
 
 ---
 
