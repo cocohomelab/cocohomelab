@@ -6,7 +6,7 @@ Modules:
 
 ---
 
-Considerations:
+Requirements:
 -	ePO License Key
 -	McAfee Grant Number
 
