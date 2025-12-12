@@ -262,6 +262,8 @@ Agent + Windows client machines
 - Policy Exemption and Exceptions Processing System (PEEPS) : DLP By-Pass
     - Generate DLP Client Bypass Key or;
     - Generate DLP Release From Quarantine Key
+    - Generating a DLP Uninstall Client Key
+- Manual Installation/Re-Installation (Missing or Corrupt Agents)
  
 
 ---
