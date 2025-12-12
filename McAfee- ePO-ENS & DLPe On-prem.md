@@ -236,7 +236,7 @@ Agent + Windows client machines
     - Screen Capture
     - Web Post
  
-#### 🖥️ WINDOWS SERVER (2012/2016/2019/2022) — Different Approach
+#### 🖥️ WINDOWS SERVER (2012/2016/2019/2022)  — Recommended Policies & Tasks
 
 - Protected Content
     - Tax File Numbers
