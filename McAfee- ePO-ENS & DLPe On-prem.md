@@ -1,7 +1,7 @@
 McAfee ePO (Trellix ePolicy Orchestrator) On-prem
 
 Modules:
-- McAfee Threat Protection ( ENS)
+- McAfee Threat Protection (Endpoint Security - ENS)
 - McAfee Data Leakage Protection Endpoint
 
 ---
@@ -116,7 +116,7 @@ Notes :
 Windows client machines and Windows Server machines require different policies and tasks, because servers and clients have different roles, performance requirements, workloads, and risk profiles.
 This is critical to avoid outages.
 
-##### 🖥️  WINDOWS CLIENT (Windows 10/11) — Recommended Policies & Tasks
+##### 🖥️  WINDOWS WORKSTATIONS (Windows 10) — Recommended Policies & Tasks
 Windows endpoints are used by end-users, so the focus is on:
 - User protection
 - Prevention
@@ -191,6 +191,7 @@ Recommended Server Tasks
 - System properties collection
 
 ### Troubleshooting
+
 ePO Server
 - McAfee Log Level 8
 - Check services:
