@@ -89,7 +89,7 @@ Core Components:
 
 
 
-### Policies + Tasks - McAfee Threat Protection ( ENS)
+### Policies + Tasks - McAfee Threat Protection (ENS)
 
 McAfee ePO Policies
 
