@@ -201,7 +201,7 @@ ePO Server
 - 
 Agent + Windows client machines
 - Change from unmanaged to managed mode
-- Fix SiteList.xml
+- Agent fix - SiteList.xml
 - Reinstall agent
 - Reinstall module on Windows client machines
 - Clean up 300 MB of free disk space on Windows client machines
