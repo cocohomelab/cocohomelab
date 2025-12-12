@@ -63,7 +63,7 @@ Core Components:
     - Golden Image
     - ePO server push
     - ePO server web
-    - SCCM, Tanium
+    - Deployment tool : SCCM, Tanium
     - Microsoft GPO
     - Manual Installation
         - FramePkg.exe /Install=Agent /ForceInstall /Silent
