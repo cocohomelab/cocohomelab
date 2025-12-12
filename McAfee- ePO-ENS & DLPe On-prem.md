@@ -61,7 +61,7 @@ Core Components:
     - System: Active Clients in Inactive Systems folder Sorting Task
     - Server Tasks: System: Inactive Clients Sorting Task
 - Deployment Method
-    - Golden Image
+    - Golden Image (Windows Workstation and Server OS)
     - ePO server push
     - ePO server web
     - Deployment tool : SCCM, Tanium
