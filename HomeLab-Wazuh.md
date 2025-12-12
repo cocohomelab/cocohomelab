@@ -43,6 +43,11 @@ Native integrations for threat detection.
 - intergrate with n8n
 - Integrate with MCP (Model Context Protocol)
 - Wazuh–MISP Integration
+- Wazuh and Graylog for efficient log collection and analysis from all your endpoints.
+- MISP to enhance your threat intelligence capabilities.
+- Cortex and TheHive for streamlined incident response.
+- Osquery to elevate your threat hunting and digital forensics efforts.
+
 
 ⭐ Summary Mapping (Simple Version)
 
