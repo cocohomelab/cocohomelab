@@ -116,7 +116,7 @@ Notes :
 Windows client machines and Windows Server machines require different policies and tasks, because servers and clients have different roles, performance requirements, workloads, and risk profiles.
 This is critical to avoid outages.
 
-##### 🖥️  WINDOWS WORKSTATIONS (Windows 10) — Recommended Policies & Tasks
+#### 🖥️  WINDOWS WORKSTATIONS (Windows 10) — Recommended Policies & Tasks
 Windows endpoints are used by end-users, so the focus is on:
 - User protection
 - Prevention
@@ -156,7 +156,7 @@ Recommended Client Tasks
 - Product deployment (ENS, Firewall, Web Control)
 
 
-##### 🖥️ WINDOWS SERVER (2012/2016/2019/2022) — Different Approach
+#### 🖥️ WINDOWS SERVER (2012/2016/2019/2022) — Different Approach
 Windows servers should NOT use the same policies as clients. Performance and stability are top priority.
 
 ##### ✅ Recommended Policies for Servers
