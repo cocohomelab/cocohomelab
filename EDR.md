@@ -1,28 +1,10 @@
-AV and EDR
-- what is? (plain version) -> ( Detaile version)
-- Architecture, Requirements and Component
-  - Manager
-  - Agent Handler
-  - SuperAgent 
-- Baseline Configuration and Interagtion
-  - Manager
-  - Database
-  - Intergartion
-  - Policy 
-  - Client : Type :- Workstation & Server
-  - Services & Command
-  - Ports
-  - Config File
-
+EDR
 
 Actions can be taken based on analyis 
-> (Prevention, Mitigation, Containment, Eradication, Remediation, Recovery)
-
-> Fine tune
-
-> Clean up
-
-> Audit (system and user)
+- (Prevention, Mitigation, Containment, Eradication, Remediation, Recovery)
+- Fine tune
+- Clean up
+- Audit (system and user)
   - Client protection coverrage / persentage
   - User login and credential
 
