@@ -34,7 +34,14 @@ Troubleshooting:
 
 ✅ 
 
-✅ 
+✅ Reference / Source :
+- https://overthewire.org/wargames
+- https://sadservers.com
+- https://mastering-linux.com
+- https://labex.io/linuxjourney
+- https://cmdchallenge.com/
+- https://csilinux.com/index.html#home
+- https://portswigger.net/web-security/dashboard
 
 
 
