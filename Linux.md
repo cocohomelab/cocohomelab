@@ -42,6 +42,11 @@ Troubleshooting:
 - https://cmdchallenge.com/
 - https://csilinux.com/index.html#home
 - https://portswigger.net/web-security/dashboard
+- https://killercoda.com/
+- https://linuxupskillchallenge.org
+- https://www.commandlinefu.com/commands/browse
+- https://www.server-world.info/en/
+- https://engineer.kodekloud.com/
 
 
 
