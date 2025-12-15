@@ -194,7 +194,7 @@ Recommended Server Tasks
 ### Troubleshooting
 
 ePO Server
-- McAfee Log Level 8
+- McAfee Log Level 8 Debug
 - Check services:
     - Trellix ePolicy Orchestrator Applications Server
     - Trellix ePolicy Orchestrator Event Parser
