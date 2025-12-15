@@ -36,10 +36,7 @@ Core Components:
 |--------------------------------------------|-------------------------------------------------------|
 |     Data Loss Prevention                   |     Data Loss Prevention                              |
 |     Data Loss Prevention Manager           |     Data Loss Prevention Manager                      |
-|     ePO-MER                                |     MER for ePO                                       |
-|     File and Removable Media Protection    |     File and Removable Media Protection               |
-|     GTI Proxy                              |     GTI Proxy Agent                                   |
-|                                            |     GTI Proxy Appliance                               |
+|     ePO-MER                                |     MER for ePO                                
 |     Help Desk Tool                         |     Help Desk Tool for MCP and DLPE                   |
 |     McAfee Agent                           |     McAfee Agent                                      |
 |     VirusScan Enterprise                   |     VirusScan Enterprise 8.8                          |
