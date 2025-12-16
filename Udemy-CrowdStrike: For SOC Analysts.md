@@ -20,3 +20,137 @@ Module 8: Whitelisting / Exclusions Navigate the nuances of whitelisting and exc
 Module 9: Putting It All Together Immerse yourself in realistic scenarios where you'll apply your newfound knowledge. Walk through end-to-end incident response processes, from detection to resolution.
 
 Module 10: Where to Go Next Chart your future course in the realm of cybersecurity. Discover avenues for continued learning, specialization, and skill refinement to stay ahead in the ever-evolving threat landscape.
+
+### Notes
+---
+
+Key Takeaways :
+
+Below is a **SOC-analyst–focused extraction of the key takeaways** from this CrowdStrike console overview. This is distilled to what actually matters for day-to-day SOC work.
+
+---
+
+Module 1:
+
+## 1. User Profile & Preferences (Do This First)
+
+**Critical for investigations and reporting**
+
+* **Set Time Zone to UTC**
+
+  * Go to **Top-right user icon → User Preferences**
+  * Set display time to **UTC**
+  * Choose a clear date format (Month/Date/Year or your org standard)
+  * Why it matters:
+
+    * All SOC reporting is in UTC
+    * Avoid mistakes when building timelines or writing incident reports
+    * Prevent manual time conversions from local time zones
+
+* **Enable “Stay Signed In”**
+
+  * Found under **Display → Stay Signed In**
+  * Prevents frequent logouts (CrowdStrike normally times out after ~15–20 minutes)
+  * Still may timeout after long inactivity, but far less often
+  * Saves time during active investigations
+
+* **Theme Selection (Light/Dark)**
+
+  * Moon/Sun icon in top right
+  * Choose what reduces eye strain during long SOC shifts
+  * No functional impact, purely usability
+
+## 2. Console Layout Depends on Your Subscription
+
+**Important for expectations and access**
+
+* What you see in the left-hand menu **depends on your CrowdStrike license**
+
+  * Examples:
+
+    * Falcon Free Trial
+    * Pro
+    * Enterprise (common in SOCs)
+* **Greyed-out features = not licensed**
+
+  * Not broken
+  * Not misconfigured
+  * Simply not paid for
+
+### Key SOC Impact
+
+* Even **Falcon Enterprise**:
+
+  * Does **NOT** automatically include:
+
+    * Identity Protection
+    * Full Next-Gen SIEM
+  * Advanced Event Search:
+
+    * Only includes **endpoint logs**
+    * Network, cloud, and server logs require **additional licensing**
+
+## 3. Understanding Menu Indicators
+
+* **Yellow or Blue dots on menu items**
+
+  * Indicates:
+
+    * New feature
+    * Updated capability
+  * CrowdStrike uses this to flag changes analysts should review
+
+* **Expandable / Collapsible Submenus**
+
+  * Use the arrows to expand menus
+  * Easy to miss features if menus are collapsed
+  * If you “can’t find something,” check submenu expansion first
+
+## 4. SOC Workflow Optimization (Highly Recommended)
+
+### Use Bookmarks Aggressively
+
+Bookmarks are a **huge productivity boost** for SOC analysts.
+
+* You can bookmark **any console page**
+* Examples of high-value bookmarks:
+
+  * **Endpoint Detections** (alerts queue)
+  * **Investigate → Advanced Event Search**
+  * **Host Timeline**
+  * **Documentation pages**
+
+    * Agent installation (Windows, macOS, Linux)
+    * Agent uninstall procedures
+    * Command-line install switches
+
+**SOC benefit**
+
+* One click straight into:
+
+  * Alert review
+  * Log searching
+  * Troubleshooting
+* Eliminates repetitive menu navigation during incidents
+
+## 5. What SOC Analysts Should Care About Most
+
+From this module, the **SOC-relevant priorities** are:
+
+1. **UTC time setting** (non-negotiable for incident response)
+2. **Stay signed in** (efficiency during investigations)
+3. **Know your licensed features**
+
+   * Avoid chasing missing functionality
+4. **Understand menu indicators**
+
+   * Stay aware of new detection or investigation features
+5. **Bookmark investigation-heavy pages**
+
+   * Alerts
+   * Advanced Event Search
+   * Documentation
+
+### SOC Bottom Line
+
+This module isn’t about detections yet—it’s about **setting yourself up to investigate efficiently, accurately, and without time confusion**. Get these basics right before touching alerts.
