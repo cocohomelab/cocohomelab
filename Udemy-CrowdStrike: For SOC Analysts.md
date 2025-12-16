@@ -24,13 +24,9 @@ Module 10: Where to Go Next Chart your future course in the realm of cybersecuri
 ### Notes
 ---
 
-Key Takeaways :
-
-Below is a **SOC-analyst–focused extraction of the key takeaways** from this CrowdStrike console overview. This is distilled to what actually matters for day-to-day SOC work.
-
----
-
 Module 1:
+
+Key Takeaways :
 
 ## 1. User Profile & Preferences (Do This First)
 
@@ -154,3 +150,39 @@ From this module, the **SOC-relevant priorities** are:
 ### SOC Bottom Line
 
 This module isn’t about detections yet—it’s about **setting yourself up to investigate efficiently, accurately, and without time confusion**. Get these basics right before touching alerts.
+
+Module 2:
+
+Key Takeaways :
+
+Module 3:
+
+Key Takeaways :
+
+Module 4:
+
+Key Takeaways :
+
+Module 5:
+
+Key Takeaways :
+
+Module 6:
+
+Key Takeaways :
+
+Module 7:
+
+Key Takeaways :
+
+Module 8:
+
+Key Takeaways :
+
+Module 9:
+
+Key Takeaways :
+
+Module 10:
+
+Key Takeaways :
