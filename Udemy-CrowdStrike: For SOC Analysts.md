@@ -28,6 +28,128 @@ Module 1:
 
 Key Takeaways :
 
+### CrowdStrike for SOC Analysts – What This Course Covers (Why You Care)
+
+### Purpose of the Course
+
+* Designed **specifically for SOC analysts**
+* Focuses on **hands-on detection triage, investigation, and response** in CrowdStrike Falcon
+* Not a sales or admin-only overview — investigation-driven
+
+### High-Level Course Structure (10 Modules)
+### 1. Console Overview
+* Learn **where things live** in the Falcon console
+* Understand layout differences based on licensing
+* Foundation for efficient navigation during incidents
+
+### 2. Where SOC Analysts Should Spend Their Time
+
+* Identifies:
+
+  * Most-used pages for SOC work
+  * Areas **you can ignore** unless you’re admin/engineering
+* Helps reduce noise and speed up triage
+
+### 3. Detection Triage (Start to Finish)
+
+**Core SOC skill**
+
+* How to:
+
+  * Review detections
+  * Understand severity, confidence, and context
+  * Decide: benign, suspicious, or malicious
+* End-to-end workflow for handling alerts properly
+
+### 4. Open Source Tools for Research
+
+* External tools to support:
+
+  * File hash analysis
+  * IP/domain reputation
+  * Malware research
+* Used **alongside CrowdStrike**, not replacing it
+
+### 5. Next-Gen SIEM + LogScale
+
+* CrowdStrike’s **Next-Gen SIEM**
+
+  * Powered by **LogScale**
+  * Uses **CrowdStrike Query Language (CQL)**
+* Focus on:
+
+  * Searching **endpoint telemetry**
+  * Making sense of large log volumes
+* Key for advanced investigations and threat hunting
+
+### 6. Real Time Response (RTR)
+
+* Remote interaction with hosts:
+
+  * Run commands
+  * Collect artifacts
+  * Perform containment actions
+* Critical for:
+
+  * Live incident response
+  * Validation and scoping
+
+### 7. Sandbox & Malware Analysis
+
+* Detonate suspicious files in:
+
+  * CrowdStrike’s built-in sandbox
+* Review:
+
+  * Malware behavior
+  * Indicators
+  * Verdicts
+* Apply **blocking actions** based on results
+
+### 8. Whitelisting & Exclusions
+
+* How to:
+
+  * Add exclusions safely
+  * Whitelist legitimate software
+* Important for:
+
+  * Reducing false positives
+  * Avoiding overblocking business apps
+* Emphasizes **controlled and documented use**
+
+### 9. Putting It All Together
+
+* Full detection walkthrough:
+
+  * Uses concepts from modules 2–8
+  * Mirrors real SOC workflows
+* Reinforces:
+
+  * Investigation logic
+  * Decision-making
+  * Response sequencing
+
+### 10. Next Steps
+
+* Guidance on:
+
+  * Additional CrowdStrike features
+  * Other courses beneficial for SOC growth
+* Helps analysts continue skill progression
+
+### This course focuses on:
+
+* **Efficient alert triage**
+* **Deep endpoint investigation**
+* **Practical response actions**
+* **Using CrowdStrike as a true EDR/XDR platform**, not just AV
+
+
+Module 2:
+
+Key Takeaways :
+
 ## 1. User Profile & Preferences (Do This First)
 
 **Critical for investigations and reporting**
@@ -151,9 +273,6 @@ From this module, the **SOC-relevant priorities** are:
 
 This module isn’t about detections yet—it’s about **setting yourself up to investigate efficiently, accurately, and without time confusion**. Get these basics right before touching alerts.
 
-Module 2:
-
-Key Takeaways :
 
 Module 3:
 
