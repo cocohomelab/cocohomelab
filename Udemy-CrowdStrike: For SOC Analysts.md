@@ -22,9 +22,10 @@ Module 9: Putting It All Together Immerse yourself in realistic scenarios where 
 Module 10: Where to Go Next Chart your future course in the realm of cybersecurity. Discover avenues for continued learning, specialization, and skill refinement to stay ahead in the ever-evolving threat landscape.
 
 ### Notes
+
 ---
 
-Module 1:
+## Module 1 :
 
 Key Takeaways :
 
@@ -146,11 +147,11 @@ Key Takeaways :
 * **Using CrowdStrike as a true EDR/XDR platform**, not just AV
 
 
-Module 2:
+## Module 2:
 
 Key Takeaways :
 
-## 1. User Profile & Preferences (Do This First)
+### 1. User Profile & Preferences (Do This First)
 
 **Critical for investigations and reporting**
 
@@ -178,7 +179,7 @@ Key Takeaways :
   * Choose what reduces eye strain during long SOC shifts
   * No functional impact, purely usability
 
-## 2. Console Layout Depends on Your Subscription
+### 2. Console Layout Depends on Your Subscription
 
 **Important for expectations and access**
 
@@ -208,7 +209,7 @@ Key Takeaways :
     * Only includes **endpoint logs**
     * Network, cloud, and server logs require **additional licensing**
 
-## 3. Understanding Menu Indicators
+### 3. Understanding Menu Indicators
 
 * **Yellow or Blue dots on menu items**
 
@@ -224,7 +225,7 @@ Key Takeaways :
   * Easy to miss features if menus are collapsed
   * If you “can’t find something,” check submenu expansion first
 
-## 4. SOC Workflow Optimization (Highly Recommended)
+### 4. SOC Workflow Optimization (Highly Recommended)
 
 ### Use Bookmarks Aggressively
 
@@ -251,7 +252,7 @@ Bookmarks are a **huge productivity boost** for SOC analysts.
   * Troubleshooting
 * Eliminates repetitive menu navigation during incidents
 
-## 5. What SOC Analysts Should Care About Most
+### 5. What SOC Analysts Should Care About Most
 
 From this module, the **SOC-relevant priorities** are:
 
@@ -274,11 +275,226 @@ From this module, the **SOC-relevant priorities** are:
 This module isn’t about detections yet—it’s about **setting yourself up to investigate efficiently, accurately, and without time confusion**. Get these basics right before touching alerts.
 
 
-Module 3:
+## Module 3:
 
 Key Takeaways :
 
-Module 4:
+### Module 3 – Detection Triage (SOC Analyst Essentials)
+
+### 1. Detection Dashboard Basics
+
+**Detection retention**
+
+* Detections: **90 days**
+* Associated indicators (hash, IP, domain): **~1 year** (license-dependent)
+
+**Filtering & visibility**
+
+* Use **Add / Remove Filters** to narrow scope
+* Column view:
+
+  * Click any row to preview detection details
+* **Group By** (very useful):
+
+  * Command line
+  * Host
+  * Process
+  * Username
+  * Severity
+    → Quickly understand **scope, impact, and false-positive patterns**
+
+### 2. Detection Icons & Visual Cues (Read These Fast)
+
+* **Falcon Black Shield** → CrowdStrike OverWatch detection (higher confidence)
+* **Multiple hexagons** → Multiple detections / possible incident grouping
+* **Green badge with check** → Process blocked
+* **White shield with slash** → Process killed / operation blocked
+* **MITRE icons inside detections** → Tactic/technique mapping
+* **Color waves** → Severity (Critical → Informational)
+
+👉 These visual indicators let you **prioritize within seconds**.
+
+### 3. Detection Views (Same Data, Different Lenses)
+
+All tabs show the **same data**, just visualized differently. Use what works best for you.
+
+### Key Views:
+
+* **Process Table**
+
+  * Hierarchical: grandparent → parent → child
+  * Shows full execution chain and command line
+* **Process Tree**
+
+  * Expand/collapse visual tree
+  * Click processes/files for details
+* **Process Graph**
+
+  * Visual relationship view
+* **Events Timeline**
+
+  * Chronological, text-heavy
+  * Best for fast, narrative-style review
+
+📌 **Tip:** Be familiar with all views; switch depending on investigation style.
+
+### 4. Where to Start Triage (Recommended Flow)
+
+### Step 1: Open Full Detection View
+
+* From detection row:
+
+  * Right-hand panel → **Actions → Details View**
+  * Or **See Full Detection**
+* Full view provides **maximum context** (preferred for triage)
+
+### Step 2: Investigate the Event
+
+* Go to **Investigate → Investigate Event**
+* Automatically:
+
+  * Pulls agent ID
+  * Filters on relevant process/target
+* Opens **Advanced Event Search (endpoint logs)**
+
+👉 This gives you a **head start** toward root cause analysis.
+
+### 5. Key Triage Questions (Think in This Order)
+
+These can usually be answered in **1–2 minutes** once experienced.
+
+### Environment Context
+
+* **Server or workstation?**
+
+  * Workstations → easier to contain
+  * Servers → high business risk, be cautious
+
+### User Context
+
+* Who ran it?
+
+  * Domain admin?
+  * Service account?
+  * Standard user?
+* Higher privilege = higher severity
+
+### Alert Context
+
+* Severity level?
+* MITRE tactic/technique?
+* OverWatch involved?
+* Was anything blocked or killed?
+
+### Threat State
+
+* Is the process still running?
+* Is malware active or already blocked?
+* Any outbound network connections?
+
+  * Beaconing / C2 = high priority containment
+
+### Process & Execution
+
+* Suspicious command lines?
+* Abnormal parent-child relationships?
+
+  * Word → cmd
+  * Unusual paths (not System32)
+* Unexpected execution locations?
+
+### Intelligence & IOCs
+
+* Known bad hash/IP/domain?
+* Mapped to known threat actor?
+* Any related activity elsewhere in environment?
+
+### External Validation
+
+* Hash/domain/IP lookups (OSINT)
+* Sandbox results (if available)
+
+### 6. Grouping Detections for Faster Insight
+
+Use **Group By** to:
+
+* See how many hosts are affected
+* Identify repeat false positives
+* Prioritize critical vs informational alerts
+* Spot common command lines or processes
+
+### 7. Actions After Triage
+
+Depending on outcome:
+
+* **False positive**
+
+  * Plan exclusions (covered later)
+* **True positive**
+
+  * Block hash/IP/domain
+  * Create custom IOA
+  * Consider host containment
+* **Uncertain**
+
+  * Escalate with notes and recommendations
+
+### 8. What to Document in Detection Notes (SOC Standard)
+
+### Minimum Required
+
+* Hostname
+* OS (Server/Workstation, version)
+* **UTC timestamps**
+* Processes & command lines
+* Summary of activity
+* Actions taken
+
+### Strong Additions
+
+* OSINT links (hash/IP/domain research)
+* Sandbox report links
+* MITRE mapping
+* Root Cause Analysis (if possible)
+* Scoping:
+
+  * Single host vs environment-wide
+* Recommendations:
+
+  * Block / exclude
+  * Further investigation steps
+
+📌 Especially important for **Tier 1 → Tier 2 handoff**
+
+### 9. Skill Progression Reality
+
+* Early on: triage takes longer
+* With experience:
+
+  * Malicious activity becomes **obvious and loud**
+  * OverWatch detections often stand out
+* Goal:
+
+  * Quickly decide:
+
+    * **Immediate escalation**
+    * **Deep dive**
+    * **Benign / tune**
+
+### SOC Analyst Bottom Line
+
+Module 3 teaches you how to:
+
+* Read CrowdStrike detections **efficiently**
+* Identify **true positives vs false positives**
+* Use visual cues and logs to reach **fast, defensible decisions**
+* Document investigations in a way that **supports escalation and reporting**
+
+
+
+
+
+## Module 4:
 
 Key Takeaways :
 
