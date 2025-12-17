@@ -1993,3 +1993,150 @@ Recommended:
 ## Module 10:
 
 Key Takeaways :
+
+## Module 10 – Where to Go Next (SOC Analyst Roadmap)
+
+### 🎯 Goal
+
+Turn CrowdStrike SOC skills into **certifications, broader tool mastery, and career growth**.
+
+
+## 1. Recommended CrowdStrike Certifications
+
+Strong resume boosters if you work in EDR / SOC roles:
+
+* **CrowdStrike Certified Falcon Analyst**
+* **CrowdStrike Threat Hunter Certification**
+
+✅ Directly aligned with:
+
+* Detection triage
+* RTR
+* IOC management
+* Incident response workflows
+
+---
+
+## 2. SANS Courses (Incident Response & Forensics Path)
+
+Highly respected but expensive:
+
+* **GCFE** – Incident Response & Enterprise Forensics
+* **GCFA** – Advanced Forensics
+
+💡 Cost Tip:
+
+* **SANS Work-Study Program**
+
+  * Reduces cost from ~$8,500 → ~$2,500
+  * Takes longer to get accepted but worth it
+
+Best for analysts moving toward:
+
+* Tier 2 / Tier 3
+* DFIR roles
+
+
+## 3. SIEM Skills (Highly Transferable)
+
+### Splunk (Strongly Recommended)
+
+* **Splunk Core Certified User**
+* Courses:
+
+  * *Zero to Power User*
+  * Updated **Splunk Core Certified User (Blueprint-based)**
+
+🎯 Why Splunk?
+
+* Core SOC skill
+* Used for:
+
+  * Detection hunting
+  * Log correlation
+  * Incident investigations
+
+## 4. Expand EDR & XDR Platform Experience
+
+Knowledge transfers easily between tools:
+
+Recommended platforms:
+
+* CrowdStrike Falcon
+* **Microsoft Defender for Endpoint**
+* **SentinelOne**
+* **Carbon Black**
+* IBM Security / Next-gen SIEM
+
+💡 Mastering one EDR makes learning others much easier.
+
+
+## 5. OSINT & Hands-On SOC Tools
+
+Critical for real-world SOC work:
+
+### Must-Know Tools
+
+* **Wireshark** – Network traffic analysis
+* **Sandboxing**
+
+  * Any.Run (great beginner sandbox)
+* **Email Header Analysis**
+* **Velociraptor (Rapid7)**
+
+  * Free, open-source
+  * Endpoint forensics & hunting
+
+🎯 These skills support:
+
+* Alert validation
+* Malware analysis
+* Threat hunting
+
+
+## 6. Skill Transferability (Key Insight)
+
+> Learning tools ≠ tool-specific knowledge
+
+What actually transfers:
+
+* Incident response thinking
+* Triage workflows
+* Log analysis
+* Forensic mindset
+* IOC analysis
+* Containment strategy
+
+This is why:
+
+* Switching EDRs is manageable
+* Strong SOC fundamentals matter more than tool brand
+
+
+## 7. Final Takeaways for SOC Analysts
+
+* CrowdStrike skills are **highly marketable**
+* Certifications accelerate career growth
+* SIEM + EDR = core SOC skillset
+* Hands-on tools matter more than theory
+* This course remains relevant despite UI changes
+
+## Suggested Next Steps (Actionable)
+
+**Tier 1 → Tier 2 Path**
+
+1. CrowdStrike Falcon Analyst cert
+2. Splunk Core User cert
+3. Hands-on with another EDR (Defender or SentinelOne)
+
+**Tier 2 → Tier 3 / IR Path**
+
+1. Threat Hunter cert
+2. GCFE / GCFA (work-study if possible)
+3. Velociraptor + Wireshark practice
+
+### Bottom Line
+
+> **CrowdStrike is a foundation, not the finish line.**
+> Build certifications, expand tooling exposure, and focus on transferable IR skills.
+
