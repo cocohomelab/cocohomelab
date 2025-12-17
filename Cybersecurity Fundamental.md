@@ -21,6 +21,7 @@ CyberSecurity Concept:
 - Do you have any exp. with powerShell?
 - How do you check listening ports?
 - How to check network state in linux?
+- How to check process spawning in windows?
 
 ### Security Foundations
 - What is the CIA Traid?
