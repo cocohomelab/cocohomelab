@@ -23,6 +23,9 @@ CyberSecurity Concept:
 - How to check network state in linux?
 - How to check process spawning in windows?
 - How to check firewall?
+- Process events
+- Command-line logging
+- Parent/child process
 
 ### Security Foundations
 - What is the CIA Traid?
