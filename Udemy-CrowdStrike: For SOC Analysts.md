@@ -1751,6 +1751,245 @@ Use exclusions carefully, document decisions, and always understand **what visib
 
 Key Takeaways :
 
-Module 10:
+## Module 9 – Detection Triage (Putting It All Together)
+
+**Goal:** Efficiently analyze, contain, document, and escalate a detection with confidence.
+
+
+## 1. Start With a Detection Template (Critical)
+
+* Use a **clean, professional alert template**
+* Always:
+
+  * Report timestamps in **UTC**
+  * Write a **plain-English executive summary** at the top
+* Template helps:
+
+  * Speed triage
+  * Reduce missed details
+  * Improve handoffs to Tier 2/3
+
+📌 Tools:
+
+* Notepad++, Sublime Text
+* OSINT tools bookmarked (VirusTotal, Shodan, CyberChef, URL scanners)
+
+
+## 2. Initial Detection Review (High-Level Triage)
+
+### Key Questions to Answer Immediately
+
+* **Severity:** Critical
+* **Host Type:** Windows 11 workstation (not a server)
+* **Containment Status:** Not contained
+* **User:** Haley (local admin → elevated risk)
+* **Activity Type:** Interactive user session
+
+🎯 End-user workstation + local admin = higher risk
+
+
+## 3. Identify the Triggering Indicator
+
+* Detection triggered by **Custom IOC**
+* Process chain:
+
+  * `explorer.exe` → file write
+* Files written:
+
+  * `Mimikatz.exe`
+  * `mimidrv.sys`
+  * `mimilib.dll`
+
+🚨 **Mimikatz = credential dumping**
+
+* Treat as **true positive**
+* Immediate response required
+
+
+## 4. Immediate SOC Actions (Decision Point)
+
+Recommended:
+
+* **Network contain the host**
+* Assume credentials may be compromised
+* Begin scoping:
+
+  * Was it executed?
+  * Were creds dumped?
+  * Has lateral movement occurred?
+
+
+## 5. Review File & Disk Activity
+
+* Files initially written to:
+
+  * `AppData\Local\Temp` (ZIP download behavior)
+  * Extracted to `Downloads\Mimikatz-master\`
+
+📌 Typical browser download pattern
+
+
+## 6. Check Quarantine Status
+
+* Files observed:
+
+  * Quarantined
+  * Some purged (auto-deleted after retention)
+* CrowdStrike actions:
+
+  * Quarantine → purge → removal
+
+✅ Sensor prevented execution and removed files
+
+
+## 7. Investigate Endpoint Logs (Deep Dive)
+
+### Best Practice
+
+* Use **Investigate Event**
+* Simplify query:
+
+  * Search keyword: `mimikatz`
+  * Case insensitive
+  * Narrow time window
+
+### Findings
+
+* Download source:
+
+  * GitHub repository
+  * ZIP download of Mimikatz
+* Timeline:
+
+  * Temp file written
+  * ZIP extracted
+  * Executables + DLL written
+  * Hashes triggered
+  * Quarantine enforced
+
+🎯 Confirms **user-initiated download**, not automated malware
+
+
+## 8. Validate On-Host State (RTR)
+
+* Connect via RTR
+* Navigate to folder paths
+* Verify:
+
+  * Executables **no longer present**
+
+✅ Confirms CrowdStrike remediation worked
+
+## 9. Preventative Actions (Blocking)
+
+### Hash Blocking (Recommended)
+
+* Block **all related hashes**:
+
+  * EXE
+  * SYS
+  * DLL
+* Apply:
+
+  * All hosts
+  * Windows / macOS / Linux
+* Action:
+
+  * **Block + generate detection**
+  * Severity: Critical
+
+📌 Do this directly from the detection UI
+
+
+### Optional: Custom IOA Rules
+
+* Block by:
+
+  * File creation
+  * File name
+* Apply rules for:
+
+  * EXE
+  * SYS
+  * DLL
+
+⚠️ Defense-in-depth, not replacement for hash blocks
+
+
+## 10. Containment
+
+* **Network contain the host**
+* Justification:
+
+  * Credential dumping tool detected
+* Containment remains until:
+
+  * Credentials reset
+  * Environment scoped
+
+
+## 11. Documentation & Workflow
+
+* Change detection status:
+
+  * New → In Progress
+* Assign to yourself
+* Document:
+
+  * File paths
+  * Hashes blocked
+  * Quarantine confirmation
+  * RTR validation
+  * Containment action
+  * OSINT validation (VirusTotal)
+
+
+## 12. Escalation to Tier 2 / Tier 3
+
+### Provide:
+
+* Summary of findings
+* Confirmed tool: Mimikatz
+* Hashes blocked
+* Host contained
+* Recommended next steps:
+
+  * Reset user credentials
+  * Search environment for same hashes
+  * Global IOC searches
+  * Lateral movement analysis
+
+🎯 Tier 2/3 handles broader scoping
+
+
+## 13. Optional Sandbox Analysis
+
+* Not required here:
+
+  * Tool behavior already known
+* Useful for:
+
+  * Unknown binaries
+  * Custom malware
+
+
+## Key SOC Takeaways
+
+* Always start with **host, user, severity**
+* Identify **true positives fast**
+* Verify **sensor action + host state**
+* Block hashes immediately
+* Contain when credentials are at risk
+* Document clearly for escalation
+* Speed + accuracy > over-analysis
+
+
+## Bottom Line
+
+> **Detection triage is about fast clarity, decisive action, and clean handoff.**
+> CrowdStrike gives you everything you need—your job is to use it efficiently.
+
+
+## Module 10:
 
 Key Takeaways :
