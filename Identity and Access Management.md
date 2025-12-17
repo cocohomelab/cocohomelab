@@ -2,3 +2,9 @@ IAM (Identity and Access Management) is the framework of policies, processes, an
 
 
 PAM (Privileged Access Management) is a subset of IAM (Identity and Access Management) focused on securing, controlling, and monitoring accounts with elevated privileges—such as admin, root, or service accounts.
+
+Troubleshooting 
+
+CyberArk
+- Check user in Vault & Safe
+- Check user in AD group
