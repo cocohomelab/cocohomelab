@@ -8,6 +8,10 @@ Actions can be taken based on analyis
   - Client protection coverrage / persentage
   - User login and credential
 
+- Triage a Detection
+
+
+
 Reference:
 
 https://docs.trellix.com/bundle/mvision-endpoint-detection-and-response-product-guide/page/UUID-539597b6-3a64-e122-8981-097a24897557.html
