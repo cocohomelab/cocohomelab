@@ -25,7 +25,11 @@
 - How to check firewall?
 - Process events
 - Command-line logging
+- Processes & Services
+- Startup & Persistence
 - Parent/child process
+- how to check Hiding process and services?
+- Check for Process Injection?
 
 ### Security Foundations
 - What is the CIA Traid?
