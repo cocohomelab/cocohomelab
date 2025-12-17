@@ -1,4 +1,4 @@
-Basic Architecture
+## Basic Architecture
 - EDR
 - XDR
 - Firewall
@@ -7,7 +7,7 @@ Basic Architecture
 - IAM/PAM
 - Attack Surface Management
 
-CyberSecurity Concept:
+## CyberSecurity Concept:
 
 ### Networking Fundamentals
 - What is the diffrences between TCP and UDP
