@@ -22,6 +22,7 @@ CyberSecurity Concept:
 - How do you check listening ports?
 - How to check network state in linux?
 - How to check process spawning in windows?
+- How to check firewall?
 
 ### Security Foundations
 - What is the CIA Traid?
