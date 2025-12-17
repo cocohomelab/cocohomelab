@@ -2,8 +2,12 @@
 DNS
 -
 - Concept:
+  - Internal DNS
+  - External/Public DNS
 - Command:
-- Troubleshootign
+- Troubleshooting
+  - nslookup
+  - dig
 - To Ask/Think:
 > Internal DNS
 > External/Public DNS
@@ -11,7 +15,7 @@ DNS
 DHCP
 -
 - Command:
-- Troubleshootign
+- Troubleshooting
 - To Ask/Think:
 
 Database
@@ -28,33 +32,27 @@ Webserver
 - To Ask/Think:
 > how to test connection?
 
+Mail Server
+
 Network
 -
 - Command:
-- Troubleshootign
+- Troubleshooting
 - To Ask/Think:
-
-> how to test connection?
-
-> How to test latency?
-
-> How to test bandwitdh?
-
-> How to test routing?
-
-> How to test packet?
-
-> Virtual IP?
-
-> Proxy?
-
-> How to test Port from firewall? type of port?
+  - how to test connection?
+  - How to test latency?
+  - How to test bandwitdh?
+  - How to test routing?
+  - How to test packet?
+  - Virtual IP?
+  - Proxy?
+  - How to test Port from firewall? type of port?
 
 VPN
 -
 -
 Virtual IP
--
+- check VIP via VIP manager
 
 ===
 Operating System
