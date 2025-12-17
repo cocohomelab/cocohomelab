@@ -1269,11 +1269,269 @@ You’re paid to:
 
 Key Takeaways :
 
+## Module 7 – Sandbox & Blocking Actions
+
+**Goal:** Safely analyze malware and implement **effective, layered blocking actions** in CrowdStrike.
+
+## 1. User Notifications (Policy Choice)
+
+* CrowdStrike can:
+
+  * **Show users pop-ups** when actions occur (block, quarantine, kill)
+  * **Silently act** with no user awareness
+* Controlled via **policy settings**
+
+🎯 **SOC Consideration**
+
+* User visibility can:
+
+  * Help reduce tickets (transparency)
+  * Or alert adversaries (trade-off)
+
+## 2. CrowdStrike Sandbox (Included & Valuable)
+
+### Why It Matters
+
+* Built-in sandbox (no extra cost)
+* Eliminates reliance on:
+
+  * Joe Sandbox
+  * ANY.RUN
+  * VMRay (paid)
+
+📌 **Use it whenever available**
+
+### Sandbox Limits & Submissions
+
+* **100 manual submissions / month**
+* Automatically quarantined files:
+
+  * **Do NOT count** toward the limit
+  * Auto-uploaded & detonated
+
+Manual uploads count only when:
+
+* You drag & drop files
+* Click “Submit for analysis”
+
+💡 100/month is more than enough for SOC work.
+
+## 3. Submitting Files to the Sandbox
+
+### Best Practices
+
+* Provide password if file is protected
+* Choose a **matching OS**:
+
+  * Windows malware → Windows detonation
+  * Linux malware → Linux detonation
+
+🎯 Like-for-like analysis gives realistic behavior.
+
+### Advanced Options
+
+* Adjust detonation settings
+* Enable email notifications when analysis completes
+
+### Status Flow
+
+1. Pending
+2. Completed (report available)
+3. Errors (if applicable)
+
+## 4. Sandbox + Threat Intelligence Correlation
+
+From **Threat Intelligence**:
+
+* Search indicators:
+
+  * IPs
+  * Domains
+  * Hashes
+* Correlate against:
+
+  * ~215M tracked indicators
+  * Known threat actors
+
+🚨 **If matched**:
+
+* Detection shows **red threat actor banner**
+* Links to:
+
+  * Actor profile
+  * TTPs
+  * MITRE ATT&CK mapping
+  * Related IOCs
+
+🎯 This greatly improves confidence in escalation.
+
+## 5. Submitting Samples to OverWatch (Optional)
+
+* Submit malware to CrowdStrike’s expert team
+* Benefits:
+
+  * Improves Falcon malware database
+  * May receive recommended actions
+
+Two submission types:
+
+* **Requested files** → include case number
+* **Unrequested files** → no response, intelligence only
+
+📌 Depends on subscription level.
+
+## 6. Blocking Actions – Indicator Management
+
+### Where
+
+* Management → Ellipses (⋮)
+
+### What You Can Add
+
+* Hashes
+* IPs
+* Domains
+
+## 7. IOC Management – What You CAN and CANNOT Block
+
+### Hashes (Executable Files Only)
+
+✅ Can:
+
+* Block
+* Block + generate detection
+* Detect only
+* Allowlist (whitelist)
+* No action
 
 
+### IPs & Domains
+
+❌ **Cannot block via IOC Management**
+
+✅ Can:
+
+* Detect only (alert)
+* No action (reference tracking)
+
+📌 “No action” = IOC ledger / reference list
 
 
-Module 8:
+## 8. How to Actually Block IPs & Domains (Important)
+
+### Option 1: Host-Based Firewall
+
+* Create firewall rules in CrowdStrike
+* Acts like a host IPS
+
+SOC Role:
+
+* Recommend blocking at:
+
+  * Perimeter firewall
+  * Host-based firewall (defense in depth)
+
+### Option 2: Custom Indicators of Attack (IOAs)
+
+**Most flexible SOC-controlled method**
+
+Capabilities:
+
+* Use **regex**
+* Trigger actions on:
+
+  * Domain names
+  * IPs
+  * Network connections
+
+Actions:
+
+* Monitor
+* Detect
+* **Kill process**
+
+⚠️ “Blocking” = killing the process making the connection
+
+#### Example
+
+* Chrome reaches `pipe.com`
+* Custom IOA:
+
+  * Match domain
+  * Action: **Kill process**
+* Result:
+
+  * Chrome terminated
+  * Effective containment
+
+## 9. Custom IOA Rule Types (OS Limitations)
+
+| Rule Type          | Windows | macOS | Linux |
+| ------------------ | ------- | ----- | ----- |
+| Process creation   | ✅       | ✅     | ✅     |
+| File creation      | ✅       | ✅     | ✅     |
+| Network connection | ✅       | ❌     | ❌     |
+| Domain name        | ✅       | ❌     | ❌     |
+
+🚨 **Important**
+
+* Linux is most restricted
+* macOS cannot match domains
+
+## 10. Regex Safety (Critical)
+
+* Always **test regex**
+* Bad regex can:
+
+  * Kill legitimate processes
+  * Break business workflows
+  * Degrade network functionality
+
+📌 Test → Review → Deploy
+
+## 11. Best Practice: Block from the Detection
+
+* Use **Management Action icon** directly from detection
+* Auto-populates:
+
+  * Hash
+  * Indicator type
+
+🎯 Reduces copy/paste errors
+🎯 Faster, safer response
+
+Once applied:
+
+* Detection shows:
+
+  * Management Action = Blocking
+
+
+## 12. Defense-in-Depth Blocking Strategy
+
+Best approach combines:
+
+1. Perimeter firewall blocks
+2. Host-based firewall rules
+3. Custom IOAs (process kill)
+4. Hash blocks from detections
+
+🎯 Multiple layers = stronger containment
+
+## Bottom Line for SOC Analysts
+
+* Use the **built-in sandbox first**
+* Understand **IOC Management limitations**
+* Hashes = easiest & safest to block
+* IPs/domains require:
+
+  * Firewalls
+  * Custom IOAs
+* Regex IOAs are powerful but risky
+* Always prefer **blocking directly from detections**
+
+
+## Module 8:
 
 Key Takeaways :
 
