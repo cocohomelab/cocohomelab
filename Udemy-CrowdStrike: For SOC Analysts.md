@@ -1535,7 +1535,219 @@ Best approach combines:
 
 Key Takeaways :
 
-Module 9:
+## Module 8 – Whitelisting & Exclusions
+
+**Goal:** Safely allow legitimate activity **without destroying visibility or security**.
+
+
+## 1. What Whitelisting Means in CrowdStrike
+
+* You are explicitly saying:
+
+  > “This activity is allowed to run in my environment.”
+* Exclusions reduce alerts but **increase risk if misused**
+
+🎯 **SOC Responsibility**
+
+* Whitelisting = trust decision
+* Bad exclusions = blind spots attackers exploit
+
+## 2. The Three Types of Exclusions (Very Important)
+
+### 1️⃣ Machine Learning (ML) Exclusions
+
+* Based on CrowdStrike’s ML detections
+* Created **directly from detections**
+* Allows activity previously flagged as malicious
+
+Use case:
+
+* Known legitimate software triggering ML alerts
+* False positives during tuning
+
+📌 **Populates:** ML exclusions tab
+
+
+### 2️⃣ Indicator of Attack (IOA) Exclusions
+
+* Created from **IOA-based detections**
+* Used when behavior-based rules trigger alerts
+
+Use case:
+
+* Legitimate applications behaving “suspiciously”
+* Custom or internal software
+
+📌 **Populates:** IOA exclusions tab
+
+### 3️⃣ Sensor Visibility Exclusions (Highest Risk)
+
+🚨 **Most dangerous exclusion type**
+
+* Completely disables:
+
+  * Telemetry collection
+  * Logging
+  * Detection
+* Activity in excluded paths is **invisible**
+
+❌ No detections
+❌ No raw events
+❌ No investigation capability
+
+Example of BAD exclusions:
+
+* `C:\Windows\Temp`
+* `C:\Windows\System32`
+
+🎯 **SOC Rule**
+
+> If malware runs here, you will NEVER see it.
+
+Use **only when absolutely required**.
+
+## 3. How Exclusions Are Created
+
+* Most exclusions are created:
+
+  * Directly from detections
+* Button shown depends on detection type
+
+
+### ML Detection → ML Exclusion
+
+* Button: **Create Machine Learning Exclusion**
+* Populates ML exclusions
+
+### IOA Detection → IOA Exclusion
+
+* Button: **Create Exclusion**
+* Populates IOA exclusions
+
+📌 The button type tells you **what kind of exclusion** you’re making.
+
+
+## 4. Glob Pattern Syntax (Exclusions ≠ Regex)
+
+⚠️ **Critical Difference**
+
+* **Blocking IOAs** → Regex
+* **Exclusions** → Glob pattern syntax
+
+Do **NOT** confuse the two.
+
+### Glob Pattern Basics
+
+* `*` = wildcard
+* `**` = recursive (all subfolders)
+
+Example:
+
+```
+Program Files/McAfee/**
+```
+
+Allows everything under McAfee directory
+
+Specific executable:
+
+```
+**/mcafee.exe
+```
+
+### Important Gotcha
+
+❌ Do NOT include drive root
+
+```
+C:\Program Files\McAfee\**
+```
+
+✅ Correct glob:
+
+```
+Program Files/McAfee/**
+```
+
+CrowdStrike may validate the syntax even if it’s **ineffective**.
+
+📌 Always verify path logic.
+
+## 5. Alternative Whitelisting Methods
+
+### Hash Allowlisting (Safest)
+
+* IOC Management → Add hash
+* Action: **Allow**
+* Applies across hosts & OS
+
+🎯 Preferred over path-based exclusions.
+
+### Host-Based Firewall
+
+* Allow IPs explicitly
+* Useful for trusted services
+
+## 6. Exclusions You CANNOT Create
+
+### OverWatch Detections
+
+🔒 Cannot be excluded
+
+* Identified by lock icon
+* CrowdStrike human-led detections
+
+Reality:
+
+* OverWatch alerts are almost always **true positives**
+
+Workarounds (if truly false positive):
+
+* Hash allowlist
+* Path exclusion (with caution)
+
+### Custom IOAs
+
+* Cannot be allowlisted
+* Detection-only or blocking mechanisms
+
+## 7. SOC Best Practices (Golden Rules)
+
+### ✅ Prefer:
+
+* Hash allowlisting
+* Narrow, specific exclusions
+* Temporary exclusions (if possible)
+
+### ❌ Avoid:
+
+* Broad path exclusions
+* System directory exclusions
+* Sensor visibility exclusions unless mandatory
+
+## 8. Key Takeaways for SOC Analysts
+
+* Not all exclusions are equal
+* **Sensor visibility exclusions = total blindness**
+* Glob patterns ≠ regex
+* OverWatch detections cannot be excluded
+* Hash allowlisting is safest
+* Exclusions should be:
+
+  * Minimal
+  * Justified
+  * Reviewed regularly
+
+## Bottom Line
+
+> **Blocking protects you.
+> Exclusions weaken you.
+> Visibility is everything in a SOC.**
+
+Use exclusions carefully, document decisions, and always understand **what visibility you are giving up**.
+
+
+## Module 9:
 
 Key Takeaways :
 
