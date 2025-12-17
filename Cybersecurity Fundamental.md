@@ -55,12 +55,14 @@
 
 ### SIEM and Logging
 - Experiance with SIEM.
+- Query & Search
 - What is correlation rule?
 - Correlation logic?
 - SIEM Rule Use cases?
 - Log ingestion
 - Parsing pipeline
 - Log parsing
+- 
 
 ### Security Tools
 - Vulnerability Tools
