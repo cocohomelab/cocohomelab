@@ -53,11 +53,12 @@ CyberSecurity Concept:
 - What is correlation rule?
 - SIEM Rule Use cases?
 
-#### Security Tools
-- Vulberability Tools
+### Security Tools
+- Vulnerability Tools
 - Nmap Tools
 - Wireshark
 - Open Source Security Tools
+- Sandbox Tools for malware analysis
 
 ### Incident Basics
 - What is alert triage?
