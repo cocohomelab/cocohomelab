@@ -47,11 +47,16 @@
 - What is social engineering?
 - What is DDOS attack?
 - What is MITRE ATT&CK
+- Lateral Movement
 
 ### SIEM and Logging
 - Experiance with SIEM.
 - What is correlation rule?
+- Correlation logic?
 - SIEM Rule Use cases?
+- Log ingestion
+- Parsing pipeline
+- Log parsing
 
 ### Security Tools
 - Vulnerability Tools
