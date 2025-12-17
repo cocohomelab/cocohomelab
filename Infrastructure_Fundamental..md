@@ -1,43 +1,57 @@
-
-DNS
--
+### DNS
 - Concept:
   - Internal DNS
   - External/Public DNS
 - Command:
-- Troubleshooting
+- Quick diagnostic / troubleshooting flow
   - nslookup
   - dig
 - To Ask/Think:
 > Internal DNS
 > External/Public DNS
 
-DHCP
--
+### DHCP
+- Provide an ipadress
+- DORA (Discover - Offer - Request - Acknowledge)
 - Command:
 - Troubleshooting
 - To Ask/Think:
 
-Database
+### Active Directory
+- What is active directory
+- To check:
+  - user
+  - permisson
+### Database
 -
 - Command:
 - Troubleshootign
 - To Ask/Think:
 > how to test connection?
 
-Webserver
--
+### Webserver
 - Command:
-- Troubleshootign
+- Quick diagnostic flow
 - To Ask/Think:
 > how to test connection?
 
-Mail Server
+### Mail Server
 
 Network
--
 - Command:
 - Troubleshooting
+- Quick diagnostic flow
+  - IP address present?
+  - NIC present?
+  - Can I ping FQDN / Hostname / IPAddress?
+  - Can I ping gateway?
+  - Can I ping 8.8.8.8?
+  - Does DNS resolve?
+  - Is routing clean?
+  - Is the port open?
+  - Is the port open machine?
+  - Firewall or proxy involved?
+  - Does it stop at hop?
 - To Ask/Think:
   - how to test connection?
   - How to test latency?
@@ -56,6 +70,9 @@ Virtual IP
 
 ===
 Operating System
+- Windows Admintrator Login (Local)
+  - .\Administrator
+
 > Service
   - systemctl
 > Process
@@ -64,4 +81,5 @@ Operating System
 > Configuration files
 > Task Scheduler
 > DLL
-
+---
+Interview trick questions
