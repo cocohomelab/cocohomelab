@@ -37,13 +37,14 @@
 
 ### Mail Server
 
-Network
+### Network
 - Command:
 - Troubleshooting
 - Quick diagnostic flow
   - IP address present?
   - NIC present?
   - Can I ping FQDN / Hostname / IPAddress?
+  - Does the ip is VIP (Load Balancer) Origin IP
   - Can I ping gateway?
   - Can I ping 8.8.8.8?
   - Does DNS resolve?
@@ -52,6 +53,15 @@ Network
   - Is the port open machine?
   - Firewall or proxy involved?
   - Does it stop at hop?
+- Advanced
+  - Why does traceroute show * * *?
+  - Router is:
+    - Blocking ICMP
+    - Rate-limiting
+    - Or not responding to TTL expiry
+
+🚫 Trap: “The router is down” 
+
 - To Ask/Think:
   - how to test connection?
   - How to test latency?
