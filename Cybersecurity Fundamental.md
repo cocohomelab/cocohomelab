@@ -4,7 +4,7 @@
 - Firewall
 - Web Application Firewall
 - Proxy
-- IAM/PAM
+- IAM/PAM/IGA
 - Attack Surface Management
 
 ## CyberSecurity Concept:
@@ -76,6 +76,7 @@
 - What is false positive?
 - What is IOC and IOA
 - How would you response DDOS attack?
+- what is DNS Triage?
 
 ### Security Engineering
 - Zero Trust Engineering
