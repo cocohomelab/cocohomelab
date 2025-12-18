@@ -13,7 +13,7 @@
 - What is the diffrences between TCP and UDP
 - What is DNS
 - What is a port? Give 3 examples
-- What is 3-way handshake
+- What is 3-way handshake? What are the tools that show the packet? 
 - What is OSI model
 
 ### Operating System Fundamentals
@@ -28,7 +28,7 @@
 - Processes & Services
 - Startup & Persistence
 - Parent/child process
-- how to check Hiding process and services?
+- How to check hiding process and services?
 - Check for Process Injection?
 
 ### Security Foundations
@@ -37,6 +37,7 @@
 - What is Digital Certificate?
 - What is TLS?
 - What is least privilege?
+- IAM, PAM & IGA
 
 ### Network Security Concepts
 - Stateful vs Stateless firewall?
