@@ -3,11 +3,11 @@ IAM (Identity and Access Management) is the framework of policies, processes, an
 
 PAM (Privileged Access Management) is a subset of IAM (Identity and Access Management) focused on securing, controlling, and monitoring accounts with elevated privileges—such as admin, root, or service accounts.
 
-`
-IAM and PAM both integrate with Active Directory. IAM uses AD to manage and authenticate users, while PAM uses AD to secure and control privileged accounts.
-`
+` IAM and PAM both integrate with Active Directory. IAM uses AD to manage and authenticate users, while PAM uses AD to secure and control privileged accounts.`
 
-Troubleshooting 
+` “IAM and PAM both integrate with Active Directory—IAM manages and authenticates regular users using AD, while PAM secures privileged AD accounts such as Domain Admins with vaulting, monitoring, and just-in-time access.”`
+
+Troubleshooting
 
 CyberArk
 - Check user in Vault & Safe
