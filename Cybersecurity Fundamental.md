@@ -15,6 +15,7 @@
 - What is a port? Give 3 examples
 - What is 3-way handshake? What are the tools that show the packet? 
 - What is OSI model
+- HTTP, SSL/TLS, DNS, SMTP
 
 ### Operating System Fundamentals
 - How do you check running process in Linux?
