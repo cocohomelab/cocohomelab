@@ -16,7 +16,7 @@
 - What is 3-way handshake? What are the tools that show the packet? 
 - What is OSI model
 - HTTP, SSL/TLS, DNS, SMTP (FTP, HTTP, SSH, SMB, LDAP)
-
+- Packet analysis tools (tcpdump, Wireshark, ngrep, etc.) o Regular expressions
 ### Operating System Fundamentals
 - How do you check running process in Linux?
 - Do you have any exp. with powerShell?
