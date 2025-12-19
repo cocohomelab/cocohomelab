@@ -27,10 +27,19 @@ Endpoint Telemetry & Data Sources :
 - User Context
 - Host Context
 
+Local Analysis
 
+Cloud or Centralized Analysis
+- Behavioral analysis: Detect anomalies in process chains, network connections, or privilege use
+- Heuristics & rules: Apply pre-configured detection logic
+- Threat intelligence correlation: Match events against known attacker infrastructure or malware
+- Machine learning / anomaly detection: Identify unusual patterns or first-seen activity
 
-Actions can be taken based on analyis 
+Actions Response :
+- Manual Response (Investigation)
+- Automated Response
 - (Prevention, Mitigation, Containment, Eradication, Remediation, Recovery)
+- 
 - Fine tune
 - Clean up
 - Audit (system and user)
