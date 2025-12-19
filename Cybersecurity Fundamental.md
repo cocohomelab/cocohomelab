@@ -40,6 +40,7 @@
 - IAM, PAM & IGA
 - Threat intelligence
 - Incident response
+- Telemetry analysis
 
 ### Network Security Concepts
 - Stateful vs Stateless firewall?
