@@ -38,6 +38,8 @@
 - What is TLS?
 - What is least privilege?
 - IAM, PAM & IGA
+- Threat intelligence
+- Incident response
 
 ### Network Security Concepts
 - Stateful vs Stateless firewall?
@@ -53,6 +55,12 @@
 - What is DDOS attack?
 - What is MITRE ATT&CK
 - Lateral Movement
+- Clear explanations of:
+  - Reconnaissance
+  - Exploitation
+  - Privilege escalation
+  - Post-exploitation
+  - Persistence techniques
 
 ### SIEM and Logging
 - Experiance with SIEM.
@@ -63,7 +71,7 @@
 - Log ingestion
 - Parsing pipeline
 - Log parsing
-- 
+- Log analysis
 
 ### Security Tools
 - Vulnerability Tools
