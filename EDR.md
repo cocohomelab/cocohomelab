@@ -6,6 +6,28 @@ Telemetry analysis is the process of collecting, correlating, and interpreting e
 
 `Turning raw security data into actionable detection and response decisions`
 
+Endpoint Telemetry & Data Sources :
+- Process Creation
+- Parent-Child Process Relationships
+- Command-Line Arguments
+- Process Injection
+- DLL Load Events
+- File Creation / Modification
+- Registry Changes
+- Scheduled Tasks
+- Startup Items
+- Service Creation
+- Kernel Events
+- Driver Loading
+- Network Connections
+- DNS Queries
+- Authentication Events
+- Token Manipulation
+- Privilege Use
+- User Context
+- Host Context
+
+
 
 Actions can be taken based on analyis 
 - (Prevention, Mitigation, Containment, Eradication, Remediation, Recovery)
