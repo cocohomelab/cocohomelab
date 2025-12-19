@@ -1,4 +1,11 @@
-EDR
+## EDR
+
+### Telemetry analysis
+
+Telemetry analysis is the process of collecting, correlating, and interpreting endpoint, network, and identity data to detect abnormal or malicious behavior and support investigation and response.
+
+`Turning raw security data into actionable detection and response decisions`
+
 
 Actions can be taken based on analyis 
 - (Prevention, Mitigation, Containment, Eradication, Remediation, Recovery)
