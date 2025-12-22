@@ -36,8 +36,11 @@ Cloud or Centralized Analysis
 - Machine learning / anomaly detection: Identify unusual patterns or first-seen activity
 
 Actions Response :
-- Manual Response (Investigation)
 - Automated Response
+- isolate the host
+- kill processes
+- quarantine files
+- support live investigation
 - (Prevention, Mitigation, Containment, Eradication, Remediation, Recovery)
 - 
 - Fine tune
@@ -49,6 +52,11 @@ Actions Response :
 - Triage a Detection
 
 MITRE ATTAck - TTP
+
+How does EDR support MITRE ATT&CK mapping?
+- EDR maps endpoint behavior to ATT&CK techniques to help understand attacker tactics.
+
+Answer:
 
 Reference:
 
