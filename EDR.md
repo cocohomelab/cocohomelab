@@ -42,6 +42,15 @@ Actions Response :
 - quarantine files
 - support live investigation
 - (Prevention, Mitigation, Containment, Eradication, Remediation, Recovery)
+
+- Quarantine devices
+- Kill process
+- Stop process
+- Execute shutdown operating system
+- Execute user logoff
+- Schedule reboot
+- End quarantine device
+
 - 
 - Fine tune
 - Clean up
