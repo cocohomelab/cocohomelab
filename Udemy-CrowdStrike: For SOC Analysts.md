@@ -25,7 +25,7 @@ Module 10: Where to Go Next Chart your future course in the realm of cybersecuri
 
 ---
 
-## Module 1 :
+# Module 1 :
 
 Key Takeaways :
 
@@ -147,7 +147,7 @@ Key Takeaways :
 * **Using CrowdStrike as a true EDR/XDR platform**, not just AV
 
 
-## Module 2:
+# Module 2:
 
 Key Takeaways :
 
@@ -275,7 +275,7 @@ From this module, the **SOC-relevant priorities** are:
 This module isn’t about detections yet—it’s about **setting yourself up to investigate efficiently, accurately, and without time confusion**. Get these basics right before touching alerts.
 
 
-## Module 3:
+# Module 3:
 
 Key Takeaways :
 
@@ -489,12 +489,14 @@ Module 3 teaches you how to:
 * Identify **true positives vs false positives**
 * Use visual cues and logs to reach **fast, defensible decisions**
 * Document investigations in a way that **supports escalation and reporting**
+<img width="938" height="396" alt="Module 3" src="https://github.com/user-attachments/assets/fe1f0d4e-15f8-4970-b7c1-b01743a83021" />
 
-## Module 4:
+
+# Module 4:
 
 Key Takeaways :
 
-## Module 4 – Open Source Intelligence (OSINT) for SOC Analysts
+# Module 4 – Open Source Intelligence (OSINT) for SOC Analysts
 
 **Goal:** Use free, industry-standard tools to enrich CrowdStrike detections and support investigation, triage, and ticketing.
 
@@ -693,7 +695,7 @@ Knowing *what’s normal* lets you spot *what’s malicious* instantly.
   * CrowdStrike certification readiness
   * Real-world SOC performance
 
-## Module 5:
+# Module 5:
 
 Key Takeaways :
 
@@ -1006,7 +1008,7 @@ This is normal and effective.
   * Timeline reconstruction
   * Escalation quality
 
-## Module 6:
+# Module 6:
 
 Key Takeaways :
 
@@ -1265,7 +1267,7 @@ You’re paid to:
   * Live validation
   * Effective containment follow-through
 
-## Module 7:
+# Module 7:
 
 Key Takeaways :
 
@@ -1531,7 +1533,7 @@ Best approach combines:
 * Always prefer **blocking directly from detections**
 
 
-## Module 8:
+# Module 8:
 
 Key Takeaways :
 
@@ -1747,7 +1749,7 @@ Workarounds (if truly false positive):
 Use exclusions carefully, document decisions, and always understand **what visibility you are giving up**.
 
 
-## Module 9:
+# Module 9:
 
 Key Takeaways :
 
@@ -1990,7 +1992,7 @@ Recommended:
 > CrowdStrike gives you everything you need—your job is to use it efficiently.
 
 
-## Module 10:
+# Module 10:
 
 Key Takeaways :
 
