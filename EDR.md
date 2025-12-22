@@ -48,7 +48,7 @@ Actions Response :
 
 - Triage a Detection
 
-
+MITRE ATTAck - TTP
 
 Reference:
 
