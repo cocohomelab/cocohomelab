@@ -7,6 +7,9 @@
   - nslookup
   - dig
 - Quick diagnostic / troubleshooting flow
+  - 
+  -  `No default gateway`
+  -  `“DNS Enabled: Yes”`
   - nslookup
   - dig
   - ipconfig /flushdns : clear (flush) the DNS cache
