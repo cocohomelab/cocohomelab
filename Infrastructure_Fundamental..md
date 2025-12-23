@@ -1,3 +1,6 @@
+### Utilities
+-ping -nslookup -dig -tracert -traceroute -telnet
+
 ### DNS
 - Concept:
   - DNS = the internet’s phone book that turns website names (FQDN) into IP addresses.
