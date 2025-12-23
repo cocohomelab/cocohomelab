@@ -1,9 +1,28 @@
 ### Utilities
 -ping -nslookup -dig -tracert -traceroute -telnet -netstat -lsof -nc -ps
 
+### DHCP
+- Provide an ipadress
+- DORA (Discover - Offer - Request - Acknowledge)
+- DHCP fails → Windows uses APIPA (169.254.x.x) → No internet
+- Command:
+- Quick diagnostic / troubleshooting flow
+  - Ping to gateway/dhcp server
+  - check network connection (auto)
+  - ipconfig /all
+  - ipconfig /release
+  - ipconfig /renew
+  - Network Adapter - Properties - IPV4
+    - `No default gateway`
+    - `“DHCP Enabled: Yes”`
+
+- To Ask/Think:
+
+
 ### DNS
 - Concept:
   - DNS = the internet’s phone book that turns website names (FQDN) into IP addresses.
+  - The DHCP server tells the machine which DNS server to use.
     - Internal DNS refer to Private DNS Server
     - External/Public DNS server refer to google : 8.8.8.8.
     - DNS record 
@@ -33,22 +52,6 @@
 > Internal DNS
 > External/Public DNS
 
-### DHCP
-- Provide an ipadress
-- DORA (Discover - Offer - Request - Acknowledge)
-- DHCP fails → Windows uses APIPA (169.254.x.x) → No internet
-- Command:
-- Quick diagnostic / troubleshooting flow
-  - Ping to gateway/dhcp server
-  - check network connection (auto)
-  - ipconfig /all
-  - ipconfig /release
-  - ipconfig /renew
-  - Network Adapter - Properties - IPV4
-    - `No default gateway`
-    - `“DHCP Enabled: Yes”`
-
-- To Ask/Think:
 
 ### Firewall
 - Concept: Port & Packet
