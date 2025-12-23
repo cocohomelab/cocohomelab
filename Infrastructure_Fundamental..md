@@ -1,10 +1,23 @@
 ### Utilities
 -ping -nslookup -dig -tracert -traceroute -telnet -netstat -lsof -nc -ps
 
-### DHCP
-- Provide an ipadress
+### DHCP (Dynamic Host Configuration Protocol)
 - DORA (Discover - Offer - Request - Acknowledge)
 - DHCP fails → Windows uses APIPA (169.254.x.x) → No internet
+- The DHCP server provide the machine:
+  - IP address
+  - Subnet mask
+  - Default gateway
+  - DNS server (usually internal corporate or ISP DNS)
+
+`If you manually set DNS on the PC, it overrides the DHCP-provided DNS.`
+
+`Your PC will then:`
+ 
+  `- Use the public DNS for all name resolution`
+ 
+ `- Ignore the DHCP-provided DNS`
+
 - Command:
 - Quick diagnostic / troubleshooting flow
   - Ping to gateway/dhcp server
@@ -19,7 +32,7 @@
 - To Ask/Think:
 
 
-### DNS
+### DNS (Domain Name System)
 - Concept:
   - DNS = the internet’s phone book that turns website names (FQDN) into IP addresses.
   - The DHCP server tells the machine which DNS server to use.
@@ -48,9 +61,8 @@
   - dig
   - ipconfig /flushdns : clear (flush) the DNS cache
 
-- To Ask/Think:
-> Internal DNS
-> External/Public DNS
+- To Ask/Think (Things to Keep in Mind)
+  -  
 
 
 ### Firewall
@@ -120,11 +132,18 @@
   - Proxy?
   - How to test Port from firewall? type of port?
 
-VPN
--
--
-Virtual IP
-- check VIP via VIP manager
+### VPN
+Concept :
+- To access the 
+- Tunnel
+- Requirement for corporate environment
+  - Antivirus / EDR
+  - HIPS / DLPe 
+
+### Virtual IP
+Concept:
+- Virtual IP infront of origin server
+- check VIP via Virtual IP Manager
 
 ===
 Operating System
