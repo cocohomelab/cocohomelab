@@ -10,6 +10,7 @@
   -  Network Adapter - Properties - IPV4
     -  `No default gateway`
     -  `“DNS Enabled: Yes”`
+  - ping to DNS server
   - nslookup
   - dig
   - ipconfig /flushdns : clear (flush) the DNS cache
