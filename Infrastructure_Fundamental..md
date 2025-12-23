@@ -7,9 +7,9 @@
   - nslookup
   - dig
 - Quick diagnostic / troubleshooting flow
-  - 
-  -  `No default gateway`
-  -  `“DNS Enabled: Yes”`
+  -  Network Adapter - Properties - IPV4
+    -  `No default gateway`
+    -  `“DNS Enabled: Yes”`
   - nslookup
   - dig
   - ipconfig /flushdns : clear (flush) the DNS cache
@@ -29,8 +29,9 @@
   - ipconfig /all
   - ipconfig /release
   - ipconfig /renew
-  -  `No default gateway`
-  -  `“DHCP Enabled: Yes”`
+  - Network Adapter - Properties - IPV4
+    - `No default gateway`
+    - `“DHCP Enabled: Yes”`
 
 - To Ask/Think:
 
