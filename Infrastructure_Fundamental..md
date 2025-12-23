@@ -1,11 +1,16 @@
 ### DNS
 - Concept:
-  - Internal DNS
-  - External/Public DNS
+  - DNS = the internet’s phone book that turns website names (FQDN) into IP addresses.
+    - Internal DNS refer to Private DNS Server
+    - External/Public DNS server refer to google : 8.8.8.8.
 - Command:
+  - nslookup
+  - dig
 - Quick diagnostic / troubleshooting flow
   - nslookup
   - dig
+  - ipconfig /flushdns : clear (flush) the DNS cache
+
 - To Ask/Think:
 > Internal DNS
 > External/Public DNS
@@ -13,8 +18,17 @@
 ### DHCP
 - Provide an ipadress
 - DORA (Discover - Offer - Request - Acknowledge)
+- DHCP fails → Windows uses APIPA (169.254.x.x) → No internet
 - Command:
 - Troubleshooting
+  - Ping to gateway/dhcp server
+  - check network connection (auto)
+  - ipconfig /all
+  - ipconfig /release
+  - ipconfig /renew
+  -  `No default gateway`
+  -  `“DHCP Enabled: Yes”`
+
 - To Ask/Think:
 
 ### Active Directory
