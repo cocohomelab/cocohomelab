@@ -1,11 +1,22 @@
 ### Utilities
--ping -nslookup -dig -tracert -traceroute -telnet
+-ping -nslookup -dig -tracert -traceroute -telnet -netstat -lsof -nc -ps
 
 ### DNS
 - Concept:
   - DNS = the internet’s phone book that turns website names (FQDN) into IP addresses.
     - Internal DNS refer to Private DNS Server
     - External/Public DNS server refer to google : 8.8.8.8.
+    - DNS record 
+
+| Record    | Purpose         |
+| --------- | --------------- |
+| **A**     | Hostname → IPv4 |
+| **AAAA**  | Hostname → IPv6 |
+| **CNAME** | Alias           |
+| **MX**    | Mail server     |
+| **PTR**   | Reverse lookup  |
+| **SRV**   | AD services     |
+
 - Command:
   - nslookup
   - dig
@@ -27,7 +38,7 @@
 - DORA (Discover - Offer - Request - Acknowledge)
 - DHCP fails → Windows uses APIPA (169.254.x.x) → No internet
 - Command:
-- Troubleshooting
+- Quick diagnostic / troubleshooting flow
   - Ping to gateway/dhcp server
   - check network connection (auto)
   - ipconfig /all
@@ -38,6 +49,18 @@
     - `“DHCP Enabled: Yes”`
 
 - To Ask/Think:
+
+### Firewall
+- Concept: Port & Packet
+  - Type
+    - Network Firewall
+    - OS Firewall (tcp or udp)
+    - Web Applicaton Firewall (tcp or udp)
+- Quick diagnostic / troubleshooting flow
+  - ping ip address
+  - traceroute ip address
+  - Check OS Firewall
+  - Check Network Firewall
 
 ### Active Directory
 - What is active directory
