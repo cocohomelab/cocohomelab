@@ -101,6 +101,4 @@
 
 ---
 
-If you’d like a **downloadable checklist or CSV** of these links (so you can mark progress as you go), just let me know!
-
 [1]: https://tryhackme.com/path/outline/advancedendpointinvestigations?utm_source=chatgpt.com "TryHackMe | Advanced Endpoint Investigations"
