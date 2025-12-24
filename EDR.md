@@ -43,7 +43,12 @@ Cloud or Centralized Analysis
 - Threat intelligence correlation: Match events against known attacker infrastructure or malware
 - Machine learning / anomaly detection: Identify unusual patterns or first-seen activity
 
-Actions Response :
+Actions Response (decision logic) :
+
+    - When you do each action
+    - Why you choose one response over another
+    - Risk considerations (false positives, business impact)
+Actions Response option: 
 - Automated Response
 - isolate the host
 - kill processes
