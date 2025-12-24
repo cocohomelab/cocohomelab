@@ -2,7 +2,10 @@
 -ping -nslookup -dig -tracert -traceroute -telnet -netstat -lsof -nc -ps
 
 ### DHCP (Dynamic Host Configuration Protocol)
-- DORA (Discover - Offer - Request - Acknowledge)
+- DHCP server
+  - ISP DHCP server
+  - Local DHCP Server 
+- The 4-Step Handshake - DORA (Discover - Offer - Request - Acknowledge)
 - DHCP fails → Windows uses APIPA (169.254.x.x) → No internet
 - The DHCP server provide the machine:
   - IP address
@@ -20,6 +23,7 @@
 
 - Command:
 - Quick diagnostic / troubleshooting flow
+  - Contact ISP provider (ISP DHCP server)
   - Ping to gateway/dhcp server
   - check network connection (auto)
   - ipconfig /all
