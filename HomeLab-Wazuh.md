@@ -68,6 +68,22 @@ Commercial EDRs exceed Wazuh in:
 - Enterprise-scale automation
 - Deep kernel visibility
 
+---
+### Use Case
+Attack Simulation : Atomic Read Team - 
+FIM 
+Oservation : wazuh console trigger alert from windows workstation
+Investigation (what to check):
+- check...
+- check via OSINT
+- Verify
+- Grab artifac to analyse - SandBox extract details for further action
+- Check IOC/IOA
+Remidiation :
+- block IP, Hash,
+Wazuh Active Response :
+Lesson Learnt:
+
 
 Reference :
 
