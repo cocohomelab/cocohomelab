@@ -82,3 +82,34 @@ In simple terms:
 - I used Wireshark to capture and analyze packets (skill).
 - I documented my results and shared screenshots on GitHub (proof).
 
+Reffrence
+
+- https://www.anomali.com/resources/what-are-stix-taxii
+- https://www.anomali.com/marketplace/threat-intelligence-feeds
+- https://otx.alienvault.com/
+- https://threatfeeds.io/
+- https://www.wiz.io/academy/threat-intel/must-follow-threat-intel-feeds
+- SANS Internet Storm Center (ISC) – Global threat feed & daily threat reports
+🔗 https://isc.sans.edu/
+ - LevelBlue Labs Open Threat Exchange (OTX) – Community-based threat intelligence
+🔗 https://otx.alienvault.com/
+- Spamhaus – Blocklists and threat data (IPs/domains)
+🔗 https://www.spamhaus.org/
+ - OpenPhish – Automatic phishing threat feed
+🔗 https://www.openphish.com/
+- CrowdSec – Collaborative IP reputation feed
+🔗 https://www.crowdsec.net/
+- Shadowserver – Daily network remediation and malware reports
+🔗 https://www.shadowserver.org/
+- HoneyDB – Honeypot-based threat intelligence
+🔗 https://honeydb.io/
+ - Automated Indicator Sharing (AIS) – CISA machine-readable indicator sharing (STIX/TAXII)
+🔗 https://www.cisa.gov/automated-indicator-sharing-ais
+ - Blocklist.de – Free attack/blocklist data (IP attacks)
+🔗 https://www.blocklist.de/
+ - CISA Known Exploited Vulnerabilities (KEV) – Authoritative exploited vulnerability list
+🔗 https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+ - abuse.ch URLhaus – Malicious URL/domain feed
+🔗 https://urlhaus.abuse.ch/
+ - GreyNoise – Internet background noise & opportunistic scanner intel
+🔗 https://www.greynoise.io/
