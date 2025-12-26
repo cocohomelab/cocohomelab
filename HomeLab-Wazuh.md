@@ -97,19 +97,4 @@ https://www.misp-project.org/2025/10/06/wazuh-integration.html/ : Wazuh–MISP I
 
 https://github.com/MISP/wazuh-integration : Wazuh–MISP Integration
 
-✅ How to make your GitHub notes count as a real portfolio:
 
-Do these and it becomes a strong portfolio:
-- Organize your repo clearly
-  - e.g., /CrowdStrike, /Trellix, /Wazuh, /EDR, /SIEM
-- Add real hands-on examples
-  - Screenshots
-  - Lab steps
-  - Detection queries
-  - Configuration snippets
-  - Troubleshooting notes
-- Include a README
-  - Explain what the repo is and what you learned.
-- Show your thinking
-  - Add summaries, diagrams, comparisons (e.g., “Wazuh vs CrowdStrike”).
-  - Interviewers love when you show analysis, not just notes.
