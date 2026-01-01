@@ -4,6 +4,12 @@ Endpoint DLP
 - Tracks data stored on devices, even those that are off-network
 
 
+Endpoint DLP
+
+`“Protect where people actually work”`
+- Endpoint DLP (USB, copy/paste, print)
+- Basic data classification and labeling
+- Better coverage for remote work
 
 
 
