@@ -11,7 +11,14 @@ Endpoint DLP
 - Basic data classification and labeling
 - Better coverage for remote work
 
+Behavior-Based Endpoint DLP
 
+`“Detect risky behavior, not just actions”`
+- UEBA on endpoint activity
+- Flags anomalies such as:
+  - Mass file access
+  - Unusual copy patterns
+  - Off-hours data movement
 
 DLP will trigger the rule only when the classification criteria is met.
 
