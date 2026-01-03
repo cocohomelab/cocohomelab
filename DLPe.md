@@ -1,3 +1,86 @@
+### `What Information is Sensitive Information ?`
+
+In **DLP (Data Loss Prevention)**, **Sensitive Information** means data that could cause harm to an individual or an organization if it is **exposed, stolen, altered, or misused**. DLP systems are designed to detect and protect this kind of data.
+
+### Common Types of Sensitive Information
+
+#### 1. **Personal Identifiable Information (PII)**
+
+Information that can identify a person:
+
+* Full name (with other identifiers)
+* Home address
+* Phone number
+* Email address
+* Date of birth
+* National ID numbers
+
+#### 2. **Financial Information**
+
+Data related to money or payments:
+
+* Credit/debit card numbers
+* Bank account numbers
+* IBAN, routing numbers
+* Transaction records
+
+#### 3. **Authentication & Security Data**
+
+Information used to access systems:
+
+* Passwords
+* PINs
+* Security questions/answers
+* Encryption keys
+* API keys, access tokens
+
+#### 4. **Health Information (PHI)**
+
+Medical or health-related data:
+
+* Medical records
+* Diagnosis details
+* Prescription information
+* Health insurance numbers
+
+#### 5. **Corporate / Confidential Business Data**
+
+Organization-specific sensitive data:
+
+* Trade secrets
+* Source code
+* Internal emails
+* Business plans
+* Contracts
+* Pricing strategies
+
+#### 6. **Intellectual Property (IP)**
+
+Creative or proprietary work:
+
+* Designs
+* Research data
+* Patents (before public release)
+* Algorithms
+
+#### 7. **Regulated Data**
+
+Data protected by laws or regulations:
+
+* GDPR (EU personal data)
+* HIPAA (US health data)
+* PCI-DSS (payment card data)
+* FERPA (student records)
+
+### Why DLP Cares About Sensitive Information
+
+DLP tools help to:
+
+* Prevent data leaks (email, USB, cloud, web uploads)
+* Enforce compliance with laws and policies
+* Reduce insider threats and human error
+
+
 Endpoint DLP
 - Monitors all network endpoints — including servers, cloud repositories, computers, mobile devices, and more — to prevent data loss or misuse
 - Facilitates classification of sensitive data, streamlining compliance reporting
