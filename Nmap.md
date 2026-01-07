@@ -22,30 +22,30 @@ Nmap Scanner
 
 
 ✅ Core Scans (fast + reliable)
- • nmap <target> — quick scan of common ports 
- • nmap -p- <target> — full TCP port sweep (1–65535) 
- • nmap -sS <target> — SYN “stealth” scan 
- • nmap -sU <target> — UDP scan (high value, often overlooked) 
- • nmap -sn <target> — host discovery only (ping sweep) 
- • nmap -Pn <target> — skip ping, treat host as up 
+- nmap <target> — quick scan of common ports 
+- nmap -p- <target> — full TCP port sweep (1–65535) 
+- nmap -sS <target> — SYN “stealth” scan 
+- nmap -sU <target> — UDP scan (high value, often overlooked) 
+- nmap -sn <target> — host discovery only (ping sweep) 
+- nmap -Pn <target> — skip ping, treat host as up 
 
 🧠 Enrichment (turn ports into answers)
- • nmap -sV <target> — service version detection 
- • nmap -A <target> — aggressive scan (OS + versions + scripts + traceroute) 
- • nmap -O <target> — OS detection 
- • nmap --traceroute <target> — path visibility 
+- nmap -sV <target> — service version detection 
+- nmap -A <target> — aggressive scan (OS + versions + scripts + traceroute) 
+- nmap -O <target> — OS detection 
+- nmap --traceroute <target> — path visibility 
 
 🧰 NSE Scripts (where it gets powerful)
- • nmap --script default <target> — default NSE scripts 
- • nmap --script vuln <target> — vulnerability scripts 
- • nmap --script http-enum <target> — web enumeration 
- • nmap --script ssl-enum-ciphers <target> — TLS cipher analysis 
- • nmap --script smb-enum-shares -p 445 <target> — SMB share enumeration 
+- nmap --script default <target> — default NSE scripts 
+- nmap --script vuln <target> — vulnerability scripts 
+- nmap --script http-enum <target> — web enumeration 
+- nmap --script ssl-enum-ciphers <target> — TLS cipher analysis 
+- nmap --script smb-enum-shares -p 445 <target> — SMB share enumeration 
 
 📄 Output = professional workflow
- • nmap -oN output.txt <target> — normal output 
- • nmap -oX output.xml <target> — XML for automation 
- • nmap -oG output.gnmap <target> — greppable output 
+- nmap -oN output.txt <target> — normal output 
+- nmap -oX output.xml <target> — XML for automation 
+- nmap -oG output.gnmap <target> — greppable output 
 
 
 
