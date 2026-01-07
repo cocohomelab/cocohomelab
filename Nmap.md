@@ -46,8 +46,7 @@ Nmap Scanner
 - nmap -oN output.txt <target> — normal output 
 - nmap -oX output.xml <target> — XML for automation 
 - nmap -oG output.gnmap <target> — greppable output 
-
-
+---
 
 - Port
 - IP Address
