@@ -6,6 +6,29 @@
 - Proxy
 - IAM/PAM/IGA
 - Attack Surface Management
+---
+
+→ Identity & Access Management
+
+→ Security Operations
+
+→ Application Security
+
+→ Disaster Recovery & Incident Response
+
+→ End User Awareness
+
+→ Technology (just one slice of the pie)
+
+→ Governance, Risk & Compliance
+
+→ 3rd Party Risk Management
+
+→ Vulnerability Programs
+
+→ Cloud Security Management
+
+---
 
 ## CyberSecurity Concept:
 
