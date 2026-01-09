@@ -90,7 +90,7 @@ Endpoint DLP
 Endpoint DLP
 
 `“Protect where people actually work”`
-- Endpoint DLP (USB, copy/paste, print)
+- Endpoint DLP (USB, copy/paste, print, screenshots)
 - Basic data classification and labeling
 - Better coverage for remote work
 
