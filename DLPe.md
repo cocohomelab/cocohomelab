@@ -160,7 +160,10 @@ Behavior-Based Endpoint DLP
 
 Use Case
 - Mapping DLP alerts to MITRE ATT&CK
-DLP will trigger the rule only when the classification criteria is met.
+
+
+How DLPe trigger
+- DLP will trigger the rule only when the classification criteria is met.
 
 
 
