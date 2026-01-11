@@ -156,7 +156,10 @@ Behavior-Based Endpoint DLP
   - Just-in-time risky behavior aligned with job change signals
   - Combination of low-risk events forming high-risk patterns
 
+---
 
+Use Case
+- Mapping DLP alerts to MITRE ATT&CK
 DLP will trigger the rule only when the classification criteria is met.
 
 
