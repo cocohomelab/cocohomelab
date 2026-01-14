@@ -2,6 +2,8 @@
 
 In **DLP (Data Loss Prevention)**, **Sensitive Information** means data that could cause harm to an individual or an organization if it is **exposed, stolen, altered, or misused**. DLP systems are designed to detect and protect this kind of data.
 
+- DLPe (Legacy) --> DSPM/CASB (Modern)
+
 ### Common Types of Sensitive Information
 
 #### 1. **Personal Identifiable Information (PII)**
