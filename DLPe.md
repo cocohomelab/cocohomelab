@@ -162,6 +162,19 @@ Behavior-Based Endpoint DLP
 
 Use Case
 - Mapping DLP alerts to MITRE ATT&CK
+- Syncing 50GB of sensitive employee data to a personal cloud storage account
+- Unauthorized Removable Media (USB/External Drives)
+  - Preventing sensitive data from being copied to unencrypted thumb drives or external hard disks.
+- Cloud Uploads & Web Exfiltration (HTTPS/Browsers)
+  - A user attempts to upload a "Salary_List.xlsx" to a personal Gmail or Dropbox account via a browser.
+- Protection of Intellectual Property (Source Code/CAD)
+  - Preventing developers from pushing proprietary code to personal GitHub repositories or leaking blueprints.
+- Regulatory Compliance (PII/PHI/PCI)
+  - Automatically identifying and protecting Social Security Numbers (SSN), Credit Card numbers, or Health records.
+- Print and Screen Capture Control
+  - Preventing "Hard Copy" leaks (printing a list of customers) or "Digital Leaks" via Snipping Tool.
+- The "Modern Pivot": Data Labeling (Sensitivity Labels)
+  - Instead of reacting to a move, the data is protected at the moment of creation.
 
 
 How DLPe trigger
