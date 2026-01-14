@@ -1,5 +1,6 @@
 ## EDR
 
+- AV (Legacy) --> EDR/XDR (Modern)
 - EDR is a security tool that monitors company devices in real time to detect suspicious behavior.
 - Instead of just blocking known viruses, it watches how programs behave. If something acts unusually — like trying to steal data or spread to other systems — it alerts the security team.
 - The advantage of EDR is that it not only detects threats but also allows us to quickly isolate an infected device, stop the malicious activity, and investigate what happened before it spreads further.
